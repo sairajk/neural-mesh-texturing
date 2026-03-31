@@ -20,7 +20,7 @@
 
   <div  align="center">
     <a>
-      <img src="./static/assets/teaser.jpg" alt="Logo" width="100%">
+      <img src="https://github.com/sairajk/neural-mesh-texturing/blob/gh-pages/static/assets/teaser.jpg" alt="Logo" width="100%">
     </a>
   </div>
 </p>

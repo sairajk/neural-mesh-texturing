@@ -1,0 +1,34 @@
+[
+  {
+    "id": "texture-2023-texture",
+    "title": "TEXTure: Text-Guided Texturing of 3D Shapes",
+    "authors": ["G. Yifan", "…"],
+    "venue": "CVPR",
+    "year": 2023,
+    "model": "Diffusion",
+    "guidance": ["Text", "CLIP", "Text", "CLIP"],
+    "model_type": "Pretrained",
+    "generation_strategy": "Optimization",
+    "texture_type": ["RGB"],
+    "tags": ["mesh", "texturing", "neural"],
+    "links": {
+      "paper": "https://arxiv.org/abs/xxxx.xxxxx",
+      "project": "https://…",
+      "code": "https://github.com/…"
+    }
+  },
+  {
+    "id": "2021-text2mesh",
+    "title": "RomanTex: Decoupling 3D-aware Rotary Positional Embedded Multi-Attention Network for Texture Synthesis",
+    "authors": ["M. Michel", "…"],
+    "venue": "CVPR",
+    "year": 2022,
+    "model": "CLIP",
+    "guidance": ["Text", "CLIP"],
+    "model_type": "Pretrained",
+    "generation_strategy": "Optimization",
+    "texture_type": ["RGB"],
+    "tags": ["style", "mesh", "neural"],
+    "links": {"paper": "https://arxiv.org/abs/xxxx.xxxxx"}
+  }
+]

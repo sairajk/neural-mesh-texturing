@@ -1,0 +1,602 @@
+/* ===== Typography & smoothing ===== */
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  font-family: 'Noto Sans', sans-serif; /* effective current font */
+  font-weight: 400;                      /* Regular */
+  font-synthesis: none;                  /* prevent faux bold/italic */
+}
+
+@font-face {
+  font-family: "Axure Handwriting";
+  src:
+    url("../fonts/AxureHandwriting.woff2") format("woff2"),
+    url("../fonts/AxureHandwriting.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Explicit weights for headings so no synthesis happens */
+h1, h2, h3 { font-weight: 700; }
+h4, h5, h6 { font-weight: 500; }
+
+/* ===== Footer & links ===== */
+.footer .icon-link {
+  font-size: 25px;
+  color: #000;
+}
+
+.link-block a {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+/* ===== Teaser ===== */
+.dnerf { font-variant: small-caps; }
+.axure-handwriting {
+  font-family: "Axure Handwriting", "Mynerve", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.teaser .hero-body {
+  padding-top: 0;
+  padding-bottom: 3rem;
+}
+
+.teaser { font-family: 'Google Sans', sans-serif; }
+
+/* ===== Publication blocks ===== */
+.publication-banner { max-height: parent; }
+
+.publication-banner video {
+  position: relative;
+  left: auto;
+  top: auto;
+  transform: none;
+  object-fit: fit;
+}
+
+.publication-title { font-family: 'Google Sans', sans-serif; }
+
+.publication-title-sketch {
+  /* font-family: "Gloria Hallelujah", cursive; */
+  /* font-weight: 400; */
+  /* font-style: normal; */
+  font-family: "Axure Handwriting", "Mynerve", cursive;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.publication-authors { font-family: 'Google Sans', sans-serif; }
+/* .publication-authors { color: #4286f4; } */
+
+.publication-authors a { color: hsl(204, 86%, 53%) !important; }
+.publication-authors a:hover { text-decoration: underline; }
+
+.note-text {
+  color: #777;
+  font-size: 0.9rem;
+}
+
+.publication-venue {
+  color: #555;
+  width: fit-content;
+  font-weight: bold;
+}
+
+.publication-awards {
+  color: #ff3860;
+  width: fit-content;
+  font-weight: bolder;
+}
+
+.author-block { display: inline-block; }
+
+/* ===== Video container ===== */
+.publication-video {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+  overflow: hidden;
+  border-radius: 10px !important;
+}
+
+.publication-video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* ===== Results carousel (Bulma-based videos, if used) ===== */
+.results-carousel { overflow: hidden; }
+
+.results-carousel .item {
+  margin: 5px;
+  overflow: hidden;
+  border: 1px solid #bbb;
+  border-radius: 10px;
+  padding: 0;
+  font-size: 0;
+}
+
+.results-carousel video { margin: 0; }
+
+/* ===== Interpolation panel ===== */
+.interpolation-panel {
+  background: #f5f5f5;
+  border-radius: 10px;
+}
+
+.interpolation-panel .interpolation-image {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.interpolation-panel .slider { margin: 0 !important; }
+
+#interpolation-image-wrapper { width: 100%; }
+#interpolation-image-wrapper img { border-radius: 5px; }
+
+/* ===== Publication link buttons ===== */
+.publication-links {
+  display: flex;
+  flex-wrap: wrap;     /* keeps nice wrapping on small screens */
+  gap: 0.5rem;         /* matches Bulma’s default spacing = 8px */
+  justify-content: center;
+}
+
+/* ===== Gradient text utility ===== */
+.text-color-gradient {
+  display: inline-block;
+  background: linear-gradient(120deg, rgb(216, 34, 30), rgb(235, 158, 116));
+  /* background: linear-gradient(120deg, #eecda3 0%, #ef629f 100%); */
+  /* background: linear-gradient(120deg, #108dc7 0%, #ef8e38 100%); */
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* ===================================================================== */
+/* ==================== Custom Image Carousel (no deps) ================= */
+/* ===================================================================== */
+
+.image-carousel {
+  position: relative;
+  overflow: visible; /* allow arrows to sit slightly outside */
+}
+
+/* Viewport: white window, clips neighbors, nice default ratio */
+.image-carousel .ic-viewport {
+  overflow: hidden;
+  border-radius: 10px;
+  background: #fff;
+  aspect-ratio: 16 / 9;
+}
+
+/* Fallback for browsers without aspect-ratio support */
+@supports not (aspect-ratio: 1) {
+  .image-carousel .ic-viewport { position: relative; height: 0; padding-bottom: 56.25%; }
+  .image-carousel .ic-track    { position: absolute; inset: 0; height: 100%; }
+  .image-carousel .ic-slide    { position: relative; height: 100%; }
+}
+
+/* Track & slides: one-up, no peeking */
+.image-carousel .ic-track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  touch-action: pan-y;  /* keep vertical page scroll on mobile */
+}
+
+.image-carousel .ic-slide {
+  min-width: 100%;
+  margin: 0;
+  background: #fff;     /* white behind letterboxed images */
+}
+
+.image-carousel .ic-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;  /* fit by width/height, no crop, no distortion */
+  object-position: center;
+}
+
+/* Fallback to ensure the image fills each slide box correctly */
+@supports not (aspect-ratio: 1) {
+  .image-carousel .ic-slide img {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    object-fit: contain; object-position: center;
+  }
+}
+
+/* Arrows (outside on desktop) */
+.image-carousel .ic-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px; height: 44px;           /* Button size */
+  border: 1px solid rgba(0,0,0,.15);
+  border-radius: 50%;
+  background: #fff;                     /* white circular arrow buttons */
+  color: #000;                          /* color of ❮ / ❯ */
+  cursor: pointer;
+  display: grid; place-items: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,.12);
+  z-index: 2;
+}
+
+.image-carousel .ic-nav:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,.18);
+}
+
+.image-carousel .ic-nav:active {
+  transform: translateY(-50%) scale(0.98); /* keep vertical centering */
+}
+
+.image-carousel .ic-prev { left: -56px; }
+.image-carousel .ic-next { right: -56px; }
+
+/* Keep arrows inside on small screens */
+@media (max-width: 768px) {
+  .image-carousel .ic-prev { left: 8px; }
+  .image-carousel .ic-next { right: 8px; }
+}
+
+/* Dots below the image */
+.image-carousel .ic-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+/* Reset UA button styles and force a perfect circle + your colors */
+.image-carousel .ic-dots .ic-dot {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgb(235, 158, 116);  /* inactive */
+  line-height: 0;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.image-carousel .ic-dots .ic-dot.is-active {
+  background: rgb(216, 34, 30);    /* active */
+}
+
+/* Better keyboard focus */
+.image-carousel .ic-dots .ic-dot:focus-visible {
+  outline: 2px solid rgb(216, 34, 30);
+  outline-offset: 2px;
+}
+
+/* Optional: use aspect-ratio for dots if supported */
+@supports (aspect-ratio: 1) {
+  .image-carousel .ic-dots .ic-dot {
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
+}
+
+/* Highlight text */
+/* Gradient marker behind text (clean edges, wraps nicely) */
+.tldr-mark {
+  background: linear-gradient(120deg,
+              rgba(216, 34, 30, 0.35),
+              rgba(235, 158, 116, 0.35));
+  /* ↑ adjust 0.28 for stronger/weaker highlight */
+  border-radius: .40em;
+  padding: 0 .20em;
+  color: inherit;                /* keep your text color */
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;   /* rounded corners on wrapped lines */
+}
+
+
+
+
+
+
+
+
+/* Trigger buttons */
+.filter-group { position: relative; }
+.menu-trigger{
+  display:inline-flex; align-items:center; gap:6px;
+  padding:10px 12px; border:1px solid #ddd; border-radius:10px;
+  background:#fff; cursor:pointer; user-select:none;
+}
+.menu-trigger .chev::before{
+  content:"▾"; display:inline-block; transition: transform .15s ease;
+}
+.filter-group.is-open .menu-trigger .chev::before{ transform: rotate(180deg); } /* arrow flip */
+
+/* The dropdown panel */
+.filter-group .menu{
+  position:absolute; top:calc(100% + 6px); left:0; min-width:220px;
+  background:#fff; border:1px solid #eee; border-radius:12px;
+  box-shadow:0 6px 24px rgba(0,0,0,.08);
+  padding:10px 12px; z-index:20;
+  font-size: 16px;
+
+  /* hide by default; show when .is-open */
+  opacity:0; visibility:hidden; transform:translateY(6px);
+  transition:opacity .12s ease, transform .12s ease, visibility .12s;
+}
+.filter-group.is-open .menu{
+  opacity:1; visibility:visible; transform:translateY(0);
+}
+.filter-group .menu label{
+  display:flex; gap:8px; align-items:center; padding:6px 2px;
+}
+
+.view-btn{
+  padding:8px 12px; border:1px solid #ddd; border-radius:999px; background:#fff; cursor:pointer;
+}
+.view-btn[aria-checked="true"]{
+  border-color:#333; background:#f3f3f3; font-weight:600;
+}
+
+/* Search bar */
+.search-wrap{
+  position: relative;
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+}
+.search-icon{
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+  font-size: 15px;
+  line-height: 1;
+  pointer-events: none;
+}
+.search-input{
+  width: 100%;
+  height: 36px;
+  padding: 0 14px 0 40px;
+  border: 1.5px solid #d0d0d0;
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.06);
+  font-size: 16px;
+  line-height: 44px;
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+.search-input::placeholder{ color: #9a9a9a; }
+.search-input:focus{
+  outline: none;
+  border-color: #444;
+  box-shadow: 0 0 0 3px rgba(0,0,0,0.08);
+}
+/* Search clear (x) button styling */
+.search-input::-webkit-search-cancel-button{
+  -webkit-appearance: none;
+  height: 14px;
+  width: 14px;
+  border-radius: 999px;
+  background:
+    linear-gradient(45deg, transparent 46%, #b23 46%, #b23 54%, transparent 54%),
+    linear-gradient(-45deg, transparent 46%, #b23 46%, #b23 54%, transparent 54%);
+  opacity: 0.8;
+  cursor: pointer;
+}
+.search-input::-webkit-search-cancel-button:hover{
+  opacity: 1;
+}
+
+/* Pill buttons (filters + clear) */
+.menu-trigger,
+.btn-pill{
+  padding: 6px 12px;
+  border: 1px solid #d6dbe2;
+  border-radius: 999px;
+  background: #f6f9ff;
+  cursor: pointer;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+  transition: background .15s ease, border-color .15s ease, box-shadow .15s ease, transform .1s ease;
+  font-size: 15px;
+}
+.menu-trigger:hover,
+.btn-pill:hover{
+  background: #eef4ff;
+  border-color: #c7d3e6;
+}
+.menu-trigger:active,
+.btn-pill:active{
+  transform: translateY(1px);
+  box-shadow: 0 1px 1px rgba(0,0,0,0.03);
+}
+
+.btn-pill-clear{
+  background: #fff5f5;
+  border-color: #f0c6c6;
+  color: #7a1f1f;
+}
+.btn-pill-clear:hover{
+  background: #ffe9e9;
+  border-color: #e8b2b2;
+}
+
+.btn-pill-clear-spaced{
+  margin-left: 14px;
+}
+
+@media (max-width: 900px){
+  .hybrid-header,
+  .hybrid-row{
+    grid-template-columns: 1fr; /* stack left/center/right */
+  }
+  .hybrid-header .hybrid-attrs,
+  .hybrid-row   .hybrid-attrs{
+    grid-template-columns: repeat(2, minmax(120px, 1fr));
+  }
+}
+
+/* --- Hybrid layout sizing (tweak these 3 to taste) --- */
+#cards {
+  --hyb-col-left:   2.6fr;   /* most space for the first column */
+  --hyb-col-center: 1.5fr;
+  --hyb-col-right:  0.3fr;
+}
+
+/* Outer grid (header + rows) */
+.hyb-header,
+.hyb-row{
+  display: grid;
+  grid-template-columns: var(--hyb-col-left) var(--hyb-col-center) var(--hyb-col-right); /* fr = fraction of free space */
+  gap: 12px;
+  align-items: center;
+  border: 1px solid #e1e4ea;
+  border-radius: 12px;
+  background: #fcfdff;
+  box-shadow: 0 2px 8px rgba(20, 30, 60, 0.04);
+}
+
+/* Header bar */
+.hyb-header{
+  padding: 8px 12px;
+  background: #f4f7fb;
+  margin-bottom: 8px;
+  font-weight: 600;
+  border-color: #d2d8e2;
+}
+
+/* Center all header “titles” */
+.hyb-header > div,
+.hyb-header .hyb-attrs > div{
+  text-align: center;
+}
+
+/* Row body */
+.hyb-row{
+  padding: 14px;
+  margin-top: 12px;
+  transition: box-shadow .15s ease, transform .15s ease, border-color .15s ease;
+}
+.hyb-row:hover{
+  border-color: #cfd6e2;
+  box-shadow: 0 6px 16px rgba(20, 30, 60, 0.08);
+  transform: translateY(-1px);
+}
+
+/* Left column (paper title/authors): LEFT-aligned data */
+.hyb-left .paper-title{ font-weight: 600; line-height: 1.3; }
+.hyb-left .paper-authors{ font-size: 14px; opacity: .9; margin-top: 2px; }
+.hyb-left .paper-meta{ font-size: 13px; opacity: .8; margin-top: 2px; }
+
+/* Middle attributes: 5 equal columns, CENTER all cells */
+.hyb-attrs{
+  display: grid;
+  grid-template-columns: repeat(5, minmax(120px, 1fr));
+  gap: 6px;              /* consistent spacing between pills */
+  justify-items: center; /* horizontal centering for grid items */
+  align-items: center;   /* vertical centering */
+  text-align: center;
+}
+.paper-attrs{ font-size: 18px; }
+
+/* Right column: stack links, one per line, RIGHT-aligned */
+.hyb-links{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;   /* right-align the link column */
+  gap: 6px;
+}
+.hyb-links a{ display: block; }
+
+/* Attribute “pills” */
+.pill{
+  display: inline-block;
+  padding: 0.15em 0.6em;
+  border: 1px solid #d7e1f0;
+  border-radius: 999px;
+  font-size: 14px;
+  white-space: nowrap;
+  background: #f2f6ff;
+}
+
+/* Responsive: stack columns on narrow screens */
+@media (max-width: 900px){
+  .hyb-header, .hyb-row{ grid-template-columns: 1fr; }
+  .hyb-links{ align-items: flex-start; } /* right column becomes left on small screens */
+}
+
+
+/* Header titles are centered by default... */
+.hyb-header > div,
+.hyb-header .hyb-attrs > div { text-align: center; }
+
+/* ...except the first column header (left-aligned, black) */
+.hyb-header { color: #000; } /* text-align sets horizontal alignment. :contentReference[oaicite:0]{index=0} */
+.hyb-header .hyb-left-title { text-align: left; } /* text-align sets horizontal alignment. :contentReference[oaicite:0]{index=0} */
+
+/* Paper title (data cell) explicitly black for contrast */
+/* .hyb-left .paper-title { color: #000; } */
+
+/* Links column: stack one per line, centered */
+.hyb-links{
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* center on the cross-axis in flexbox */  /* :contentReference[oaicite:1]{index=1} */
+  text-align: center;
+  gap: 6px;
+}
+.hyb-links a{
+  display: block;
+  font-size: 14px;       /* slightly smaller link text */           /* :contentReference[oaicite:2]{index=2} */
+  line-height: 1.25;
+}
+
+/* CHANGE the darness of the Title BG */
+/* was 95% —> make it a bit darker */
+#cards { --hyb-header-lightness: 93%; }
+.hyb-header { background-color: hsl(0 0% var(--hyb-header-lightness)); }
+
+/* the wrapper of pills inside each attribute cell */
+.hyb-row .hyb-attrs > div{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* horizontal + vertical gaps */
+  column-gap: 5px;
+  row-gap: 3px;           /* <-- adds space between wrapped lines */
+}
+
+.hyb-year{
+  margin: 16px 0 6px;
+  font-weight: 700;
+  padding-left: 15px;
+  color: #333;
+  border-bottom: 1px solid #e6e9f0;
+}

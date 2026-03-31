@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Advances in Neural 3D Mesh Texturing: A Survey">
+    <meta name="keywords" content="3D mesh texturing, neural mesh texturing, mesh texturing survey,
+        advances in neural 3D mesh texturing, polygonal meshes, triangle meshes, texture mapping,
+        UV mapping, UV unwrapping, mesh parameterization, texture atlases, texture alignment,
+        texture baking, texture synthesis, texture transfer, texture completion, inpainting,
+        texture variation, material generation, PBR, physically based rendering, PBR materials,
+        PBR material maps, albedo, diffuse map, base color, normal map, roughness map, metallic map,
+        specular map, displacement map, ambient occlusion, height map, BRDF, SVBRDF,
+        appearance modeling, surface appearance, shading, differentiable rendering,
+        differentiable mesh rendering, rendering losses, neural rendering, neural fields,
+        neural texture fields, neural texture mapping, implicit representations,
+        coordinate-based networks, vision-language models, text-to-texture, image-to-texture,
+        mesh-to-texture, multi-view texturing, view-consistent textures, generative models,
+        variational autoencoders, GANs, generative adversarial networks, diffusion models,
+        score-based models, text-guided diffusion, image-guided diffusion, structural guidance,
+        geometric guidance, semantic guidance, stylistic guidance, unconditional texture generation,
+        conditional texture generation, optimization-based texturing, feed-forward texturing,
+        accelerated diffusion, texture refinement, texture upsampling, super-resolution,
+        retopology, UV seam handling, seam removal, seam-aware loss, texture consistency,
+        texture coherence, topology awareness, geometric priors, normal-aware texturing,
+        depth-aware texturing, human texturing, 3D humans, garments, clothing texturing,
+        avatar texturing, face texturing, skin detail, hair and fur texturing,
+        scene-level texturing, indoor scene texturing, outdoor scene texturing, object texturing,
+        category-level texturing, single-image texturing, few-shot texturing, data-driven texturing,
+        self-supervised texturing, weakly supervised texturing, datasets, mesh datasets,
+        image datasets, dataset preprocessing, data filtering, evaluation metrics,
+        perceptual metrics, texture quality assessment, realism, fidelity, diversity,
+        applications, digital content creation, game assets, VFX, animation, modeling pipelines,
+        challenges, limitations, future work">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Advances in Neural 3D Mesh Texturing: A Survey</title>
+
+    <!-- Google tag (gtag.js)
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-K3751HKNYS"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-K3751HKNYS');
+    </script> -->
+
+    <!-- Performance hints -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans&family=Noto+Sans:ital,wght@0,100..500;1,100..500&family=Castoro:ital@0;1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mynerve&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./static/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+
+    <!-- <link rel="stylesheet" href="./static/css/fontawesome.all.min.css"> -->
+    <!-- Font Awesome 6.7.2 (stable LTS) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous">
+
+    <link rel="stylesheet"
+            href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+
+    <link rel="icon" href="./static/assets/triangle_painting_sq.png">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- <script defer src="./static/js/fontawesome.all.min.js"></script> -->
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="./static/js/index.js"></script>
+
+    <!-- For Latex -->
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+    <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+</head>
+
+<body>
+    <section class="hero">
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                    <div class="column has-text-centered">
+                        <h1 class="title is-2 publication-title" style="margin-top: 0px; padding-top: 0px;">
+                          Advances in
+                        </h1>
+                        <div class="text-color-gradient title is-1 publication-title-sketch" 
+                            style="font-size:350%; line-height:1; margin-bottom: 0px; padding-bottom: 0px;"> 
+                            <img src="./static/assets/triangle_painting_1.png" alt="icon" style="height:1.0em; width:auto; margin-bottom: -11.5px;">
+                            <span class="dnerf axure-handwriting" style="font-size:90%;">Neural 3D Mesh Texturing:</span>
+                        </div>
+                        <!-- Adaptive 3D Segmentation using Few Image Annotations -->
+                        <h1 class="title is-2 publication-title" style="margin-top: 0px; padding-top: 0px;">
+                            A Survey
+                        </h1>
+
+                        <div class="is-size-5 publication-authors">
+                            <span class="author-block">
+                                <a href="https://sairajk.github.io/" target="_blank">Sai Raj Kishore Perla</a>,&nbsp</span>
+                            <span class="author-block">
+                                <a href="https://www.cs.sfu.ca/~haoz/" target="_blank">Hao (Richard) Zhang</a>,&nbsp</span>
+                            <span class="author-block">
+                                <a href="https://www.sfu.ca/~amahdavi/" target="_blank">Ali Mahdavi-Amiri</a>
+                            </span>
+                        </div>
+
+                        <div class="is-size-5 publication-authors">
+                            <span class="author-block">Simon Fraser University</span>
+                        </div>
+
+                        <!-- <br> -->
+                        <div style="height: 0.5em;"></div>  <!-- Half line-break -->
+
+                        <div class="is-size-5 publication-authors">
+                            <span class="title is-4">Eurographics STAR (Computer Graphics Forum), 2026</span>
+                            &nbsp;
+                            <img src="./static/assets/german_flag.png" alt="icon" style="height:2em; width:auto; margin-bottom: -12px; transform: rotate(-3deg);">
+                        </div>
+
+                        <div style="height: 0.5em;"></div>  <!-- Half line-break -->
+
+                        <div class="column has-text-centered">
+                            <div class="publication-links">
+                                <!-- PDF Link. -->
+                                <span class="link-block">
+                                    <a href="." target="_blank"
+                                        class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="fa-solid fa-file-pdf"></i>
+                                        </span>
+                                        <span>Paper</span>
+                                    </a>
+                                </span>
+                                <span class="link-block">
+                                    <a class="external-link button is-normal is-rounded is-dark" href="." target="_blank">
+                                        <span class="icon">
+                                            <i class="ai ai-arxiv"></i>
+                                        </span>
+                                        <span>arXiv</span>
+                                    </a>
+                                </span>
+
+                                <!-- Video Link. -->
+                                <!-- <span class="link-block">
+                                    <a href="" target="_blank"
+                                        class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="fab fa-youtube"></i>
+                                        </span>
+                                        <span>Video</span>
+                                    </a>
+                                </span> -->
+
+                                <!-- Github Link. -->
+                                <span class="link-block">
+                                    <a href="https://github.com/sairajk/neural-mesh-texturing" class="external-link button is-normal is-rounded is-dark" target="_blank">
+                                        <span class="icon">
+                                            <i class="fa-brands fa-github"></i>
+                                        </span>
+                                        <span>Github</span>
+                                    </a>
+                                </span>
+
+                                <span class="link-block">
+                                    <a class="external-link button is-normal is-rounded is-dark" href="#BibTeX">
+                                        <span class="icon">
+                                            <i class="fa-solid fa-quote-right"></i>
+                                        </span>
+                                        <span>Cite</span>
+                                    </a>
+                                </span>
+
+                                <!-- Dataset Link. -->
+                                <span class="link-block"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="hero teaser">
+        <div class="container is-max-desktop">
+            <div class="hero-body">
+                  
+                  <div class="columns is-centered">
+                  <div class="column is-full-width">
+                      <h2 id="tldr" class="subtitle has-text-centered" style="padding-top: 0px; font-size: 130%;">
+                        <!-- Text highlighted at the end -->
+                        <span style="font-size: 105%; color: black;"><b><u>TL;DR.</u></b></span>&nbsp;
+                        We survey <u>Neural 3D Mesh Texturing</u>, covering foundations, guidance, and methods ranging 
+                        from GANs to diffusion, along with datasets, metrics, applications, and open challenges.
+                      </h2>
+                      <!-- We segment 3D shapes into possibly non-semantic and non-text describable ... -->
+                  </div>
+                  </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="padding-top:1rem;">
+        <div class="container is-max-desktop">
+          <!-- Abstract. -->
+          <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+              <h2 class="title is-3">
+                <img src="./static/assets/triangle_painting_2.png" alt="icon" style="height:1.5em; width:auto; margin-bottom: -12px;">
+                <span class="text-color-gradient publication-title-sketch" style="font-size:125%;">Abstract</span>
+              </h2>
+              <div class="content has-text-justified">
+                <p>
+                    Texturing 3D meshes plays a vital role in determining the visual realism of digital objects and scenes. 
+                    Although recent generative 3D approaches based on Neural Radiance Fields and Gaussian Splatting can produce
+                     textured assets directly, polygonal meshes remain the core representation across modeling, animation, 
+                     visual effects, and gaming pipelines. Neural 3D mesh texturing therefore continues to be an essential 
+                     and active area of research. In this survey, we present a comprehensive review of recent advances in 
+                     neural 3D mesh texturing, covering methods for texture synthesis, transfer, and completion. We first 
+                     summarize key foundations in mesh geometry, texture mapping, differentiable rendering, and neural generative models, 
+                     and then organize the literature into a unified taxonomy spanning early GAN-based methods to modern 
+                     diffusion-based pipelines. We further analyze common architectures and supervision strategies, 
+                     review datasets and evaluation protocols, and discuss emerging applications, practical/commercial systems, 
+                     and open challenges. Together, these insights provide a structured perspective on the current landscape and 
+                     help guide future developments in learning-based 3D mesh texturing.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!--/ Abstract. -->
+        </div>
+    </section>
+
+    <!-- Search + Filters toolbar -->
+    <section class="section" id="papers" style="padding-top:1rem;">
+    <div class="container is-max-widescreen" id="resultsContainer">
+      <!-- 
+      is-max-desktop → compact cap (desktop), expands at wider breakpoints. 
+      is-max-widescreen → a bit wider (widescreen cap).
+      is-fullhd → widest fixed cap (full-HD).
+      is-fluid → full-width (no max-width; keeps side gap).
+      -->
+
+      <!-- Our Approch. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">
+            <img src="./static/assets/triangle_painting_3.png" alt="icon" style="height:1.5em; width:auto; margin-bottom: -11px;">
+            <span class="text-color-gradient publication-title-sketch" style="font-size:125%;">Neural 3D Mesh Texturing</span>
+          </h2>
+          <p class="content" style="max-width: 800px; margin: 20px auto 15px; text-align: center;">
+            A growing list of works in <em>Neural 3D Mesh Texturing</em>.
+            Each work is characterized by <strong>Model</strong> (the type of model being used),
+            <strong>Guidance</strong> (the type of stylistic guidance which controls texture appearance),
+            <strong>Model Type</strong> (whether the model is pre-trained, fine-tuned, or custom trained for the texturing task),
+            <strong>Generation Strategy</strong> (the way textures are generated: Optimization / Iterative / Synchronized / Feed-Forward),
+            and <strong>Texture Type</strong> (RGB textures, with baked-in lighting effects, or disentangled PBR materials).
+            <br><br>
+            Check out our paper to learn more. &#x1F642
+          </p>
+          <p class="content note-text" style="max-width: 600px; margin: 20px auto 0px; text-align: center;">
+            <strong><u>Note:</u></strong> This list is not exhaustive. If we missed your work or tagged it incorrectly,
+            please submit a correction or addition via our <a href="." target="_blank">GitHub</a> repository.
+          </p>
+        </div>
+      </div>
+      <!--/ Our Approch. -->
+
+      <!-- Row 1: centered search -->
+      <div class="toolbar" style="display:flex; flex-direction:column; align-items:center; gap:10px;">
+        <div class="search-wrap">
+          <span class="search-icon" aria-hidden="true">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </span>
+          <input id="searchInput" class="search-input" type="search" placeholder="Search title, authors, venue…">
+        </div>
+        <!-- count moved below filters -->
+      </div>
+
+      <!-- Row 2: filters (centered, hover-to-open) -->
+      <div class="filters-row"
+          style="display:flex; justify-content:center; align-items:center; align-content:center;
+                  gap:12px; flex-wrap:wrap; margin:20px 0;">
+        <div class="filter-group" data-facet="model">
+          <button class="menu-trigger" aria-haspopup="true" aria-expanded="false">
+            Model <span class="chev" aria-hidden="true"></span>
+          </button>
+          <div class="menu" role="menu"></div>
+        </div>
+
+        <div class="filter-group" data-facet="guidance">
+          <button class="menu-trigger" aria-haspopup="true" aria-expanded="false">
+            Guidance <span class="chev" aria-hidden="true"></span>
+          </button>
+          <div class="menu" role="menu"></div>
+        </div>
+
+        <div class="filter-group" data-facet="model_type">
+          <button class="menu-trigger" aria-haspopup="true" aria-expanded="false">
+            Model Type <span class="chev" aria-hidden="true"></span>
+          </button>
+          <div class="menu" role="menu"></div>
+        </div>
+
+        <div class="filter-group" data-facet="generation_strategy">
+          <button class="menu-trigger" aria-haspopup="true" aria-expanded="false">
+            Generation <span class="chev" aria-hidden="true"></span>
+          </button>
+          <div class="menu" role="menu"></div>
+        </div>
+
+        <div class="filter-group" data-facet="texture_type">
+          <button class="menu-trigger" aria-haspopup="true" aria-expanded="false">
+            Texture Type <span class="chev" aria-hidden="true"></span>
+          </button>
+          <div class="menu" role="menu"></div>
+        </div>
+
+        <button id="clearBtn" class="btn-pill btn-pill-clear btn-pill-clear-spaced">
+          Clear
+        </button>
+      </div>
+
+      <div id="activeChips" style="margin:0px 0 12px; display:flex; gap:8px; flex-wrap:wrap; justify-content:center;"></div>
+
+      <!-- View switch (List · Table · Hybrid) -->
+      <!-- <div class="view-switch" role="radiogroup" aria-label="Results view"
+          style="display:flex; justify-content:center; gap:8px; margin:8px 0 6px;">
+        <button type="button" class="view-btn" role="radio" aria-checked="true"  data-view="list">List</button>
+        <button type="button" class="view-btn" role="radio" aria-checked="false" data-view="table">Table</button>
+        <button type="button" class="view-btn" role="radio" aria-checked="false" data-view="hybrid">Hybrid</button>
+      </div> -->
+
+      <div id="count" style="opacity:.8; text-align:center; margin:0px 0 10px;"></div>
+
+
+      <!-- Cards -->
+      <div id="cards" class="cards-grid"
+          style="display:grid; gap:16px; grid-template-columns:repeat(auto-fill,minmax(280px,1fr));"></div>
+    </div>
+    </section>
+
+    <!-- Fuse.js UMD (browser build) -->
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.1.0/dist/fuse.min.js"></script>
+    <script src="static/js/app.js" defer></script>
+
+    <section class="section" style="padding-top:1rem;" id="BibTeX">
+        <div class="container is-max-desktop content">
+            <h2 class="title  is-3">
+                <img src="./static/assets/triangle_painting_4.png" alt="icon" style="height:1.5em; width:auto; margin-bottom: -11px;">
+                <span class="text-color-gradient publication-title-sketch" style="font-size:125%;">BibTeX</span>
+            </h2>
+            <pre>
+<code style="display: block; white-space: pre-wrap; margin-block-start: -20px; margin-block-end: -35px;">
+@article{perla2026NeuralMeshTexSurvey,
+    author = {Perla, Sai Raj Kishore and Mahdavi-Amiri, Ali and Zhang, Hao},
+    title = {Advances in Neural 3D Mesh Texturing: A Survey},
+    journal = {Eurographics STAR (State of The Art Reports), Computer Graphics Forum},
+    volume = {45},
+    number = {2},
+    pages = {e70392},
+    doi = {https://doi.org/10.1111/cgf.70392},
+    url = {https://sairajk.github.io/neural-mesh-texturing},
+    year = {2026}
+}
+</code>
+            </pre> 
+        </div>
+    </section>
+
+    <footer class="footer" style="padding:1rem 0;">
+        <div class="container">
+            <div class="content has-text-centered">
+
+                <a class="icon-link" href="." target="_blank">
+                    <i class="fas fa-file-pdf"></i>
+                </a>&nbsp;
+                <a class="icon-link" href="." target="_blank">
+                    <i class="ai ai-arxiv"></i>
+                </a>&nbsp;
+                <a class="icon-link" href="." target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+            <div class="columns is-centered">
+                <div class="column is-8">
+                    <div class="content">
+                        <p style="text-align:center">
+                            This webpage template is adapted from <a href="https://nerfies.github.io/" target="_blank">Nerfies</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

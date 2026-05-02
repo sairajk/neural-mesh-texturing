@@ -1,34 +1,2058 @@
 [
   {
-    "id": "texture-2023-texture",
-    "title": "TEXTure: Text-Guided Texturing of 3D Shapes",
-    "authors": ["G. Yifan", "…"],
-    "venue": "CVPR",
-    "year": 2023,
-    "model": "Diffusion",
-    "guidance": ["Text", "CLIP", "Text", "CLIP"],
-    "model_type": "Pretrained",
-    "generation_strategy": "Optimization",
-    "texture_type": ["RGB"],
-    "tags": ["mesh", "texturing", "neural"],
+    "id": "2019-texture-fields",
+    "title": "Texture Fields: Learning Texture Representations in Function Space",
+    "authors": [
+      "Michael Oechsle",
+      "Lars Mescheder",
+      "Michael Niemeyer",
+      "Thilo Strauss",
+      "Andreas Geiger"
+    ],
+    "venue": "ICCV",
+    "year": 2019,
+    "model": "Neu. Fields",
+    "guidance": [
+      "Unconditional",
+      "Image"
+    ],
+    "model_type": "Custom",
+    "generation_strategy": "Feed-forward",
+    "texture_type": [
+      "RGB Tex."
+    ],
+    "tags": [
+      "implicit textures",
+      "mesh",
+      "texture generation"
+    ],
     "links": {
-      "paper": "https://arxiv.org/abs/xxxx.xxxxx",
-      "project": "https://…",
-      "code": "https://github.com/…"
+      "paper": "https://openaccess.thecvf.com/content_ICCV_2019/papers/Oechsle_Texture_Fields_Learning_Texture_Representations_in_Function_Space_ICCV_2019_paper.pdf",
+      "project": "https://autonomousvision.github.io/texture-fields/",
+      "code": "https://github.com/autonomousvision/texture_fields"
     }
   },
   {
-    "id": "2021-text2mesh",
-    "title": "RomanTex: Decoupling 3D-aware Rotary Positional Embedded Multi-Attention Network for Texture Synthesis",
-    "authors": ["M. Michel", "…"],
+    "id": "2020-adversarial-texture-optimization",
+    "title": "Adversarial Texture Optim. from RGB-D Scans",
+    "authors": [
+      "Jingwei Huang",
+      "Justus Thies",
+      "Angela Dai",
+      "Abhijit Kundu",
+      "Chiyu Max Jiang",
+      "Leonidas Guibas",
+      "Matthias Nießner",
+      "Thomas Funkhouser"
+    ],
+    "venue": "CVPR",
+    "year": 2020,
+    "model": "GAN",
+    "guidance": [
+      "Image"
+    ],
+    "model_type": "Custom",
+    "generation_strategy": "Optim.",
+    "texture_type": [
+      "RGB Tex."
+    ],
+    "tags": [
+      "rgb-d scans",
+      "texture optimization",
+      "photorealism"
+    ],
+    "links": {
+      "paper": "https://openaccess.thecvf.com/content_CVPR_2020/papers/Huang_Adversarial_Texture_Optimization_From_RGB-D_Scans_CVPR_2020_paper.pdf",
+      "project": "https://justusthies.github.io/posts/advtex/",
+      "code": "https://github.com/hjwdzh/AdversarialTexture"
+    }
+  },
+  {
+    "id": "2021-ltg",
+    "title": "Learning Texture Generators for 3D Shape Collections from Internet Photo Sets",
+    "authors": [
+      "Rui Yu",
+      "Yue Dong",
+      "Pieter Peers",
+      "Xin Tong"
+    ],
+    "venue": "BMVC",
+    "year": 2021,
+    "model": "GAN",
+    "guidance": [
+      "Unconditional"
+    ],
+    "model_type": "Custom",
+    "generation_strategy": "Feed-forward",
+    "texture_type": [
+      "RGB Tex."
+    ],
+    "tags": [
+      "shape collections",
+      "uv textures",
+      "photo supervision"
+    ],
+    "links": {
+      "paper": "https://www.cs.wm.edu/~ppeers/publications/Yu2021LTG/Yu_BMVC2021.pdf",
+      "project": "https://www.cs.wm.edu/~ppeers/showPublication.php?id=Yu%3A2021%3ALTG",
+      "code": "https://github.com/1996yr/TexGAN"
+    }
+  },
+  {
+    "id": "2022-texturify",
+    "title": "Texturify: Generating Textures on 3D Shape Surfaces",
+    "authors": [
+      "Yawar Siddiqui",
+      "Justus Thies",
+      "Fangchang Ma",
+      "Qi Shan",
+      "Matthias Nießner",
+      "Angela Dai"
+    ],
+    "venue": "ECCV",
+    "year": 2022,
+    "model": "GAN",
+    "guidance": [
+      "Unconditional"
+    ],
+    "model_type": "Custom",
+    "generation_strategy": "Feed-forward",
+    "texture_type": [
+      "RGB Tex."
+    ],
+    "tags": [
+      "surface textures",
+      "mesh",
+      "adversarial learning"
+    ],
+    "links": {
+      "paper": "https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136630073.pdf",
+      "project": "https://nihalsid.github.io/texturify/",
+      "code": "https://github.com/nihalsid/texturify"
+    }
+  },
+  {
+    "id": "2023-mesh2tex",
+    "title": "Mesh2Tex: Generating Mesh Textures from Image Queries",
+    "authors": [
+      "Alexey Bokhovkin",
+      "Shubham Tulsiani",
+      "Angela Dai"
+    ],
+    "venue": "ICCV",
+    "year": 2023,
+    "model": "GAN + Neu. Fields",
+    "guidance": [
+      "Unconditional",
+      "Image"
+    ],
+    "model_type": "Custom",
+    "generation_strategy": "Feed-forward + Optim.",
+    "texture_type": [
+      "RGB Tex."
+    ],
+    "tags": [
+      "image-guided",
+      "mesh textures",
+      "neural fields"
+    ],
+    "links": {
+      "paper": "https://openaccess.thecvf.com/content/ICCV2023/papers/Bokhovkin_Mesh2Tex_Generating_Mesh_Textures_from_Image_Queries_ICCV_2023_paper.pdf",
+      "project": "https://alexeybokhovkin.github.io/mesh2tex/",
+      "code": "https://github.com/alexeybokhovkin/mesh2tex"
+    }
+  },
+    {
+    "id": "2023-shaddr",
+    "title": "ShaDDR: Interactive Example-Based Geometry and Texture Generation via 3D Shape Detailization and Differentiable Rendering",
+    "authors": [
+      "Qimin Chen",
+      "Zhiqin Chen",
+      "Hang Zhou",
+      "Hao Zhang"
+    ],
+    "venue": "SIGGRAPH Asia",
+    "year": 2023,
+    "model": "GAN",
+    "guidance": [
+      "3D Shape"
+    ],
+    "model_type": "Custom",
+    "generation_strategy": "Feed-forward",
+    "texture_type": [
+      "RGB Tex."
+    ],
+    "tags": [
+      "example-based",
+      "shape detailization",
+      "voxel textures"
+    ],
+    "links": {
+      "paper": "https://arxiv.org/pdf/2306.04889.pdf",
+      "project": "https://qiminchen.github.io/shaddr/",
+      "code": "https://github.com/qiminchen/ShaDDR"
+    }
+  },
+  {
+    "id": "2021-3dstylenet",
+    "title": "3DStyleNet: Creating 3D Shapes with Geometric and Texture Style Variations",
+    "authors": [
+      "Kangxue Yin",
+      "Jun Gao",
+      "Maria Shugrina",
+      "Sameh Khamis",
+      "Sanja Fidler"
+    ],
+    "venue": "ICCV",
+    "year": 2021,
+    "model": "GAN",
+    "guidance": [
+      "3D Shape"
+    ],
+    "model_type": "Pre-trained + Custom",
+    "generation_strategy": "Optim.",
+    "texture_type": [
+      "RGB Tex."
+    ],
+    "tags": [
+      "style transfer",
+      "shape-guided",
+      "multi-view rendering"
+    ],
+    "links": {
+      "paper": "https://openaccess.thecvf.com/content/ICCV2021/papers/Yin_3DStyleNet_Creating_3D_Shapes_With_Geometric_and_Texture_Style_Variations_ICCV_2021_paper.pdf",
+      "project": "https://research.nvidia.com/labs/toronto-ai/3DStyleNet/",
+      "code": "https://github.com/nv-tlabs/3DStyleNet"
+    }
+  },
+  {
+    "id": "2021-spsg",
+    "title": "SPSG: Self-Supervised Photometric Scene Generation From RGB-D Scans",
+    "authors": [
+      "Angela Dai",
+      "Yawar Siddiqui",
+      "Justus Thies",
+      "Julien Valentin",
+      "Matthias Nießner"
+    ],
+    "venue": "CVPR",
+    "year": 2021,
+    "model": "GAN",
+    "guidance": [
+      "Image"
+    ],
+    "model_type": "Custom",
+    "generation_strategy": "Feed-forward",
+    "texture_type": [
+      "RGB Tex."
+    ],
+    "tags": [
+      "rgb-d scans",
+      "scene generation",
+      "self-supervised"
+    ],
+    "links": {
+      "paper": "https://openaccess.thecvf.com/content/CVPR2021/papers/Dai_SPSG_Self-Supervised_Photometric_Scene_Generation_From_RGB-D_Scans_CVPR_2021_paper.pdf",
+      "project": "https://justusthies.github.io/posts/spsg/",
+      "code": "https://github.com/angeladai/spsg"
+    }
+  },
+  {
+    "id": "2022-auv-net",
+    "title": "AUV-Net: Learning Aligned UV Maps for Texture Transfer and Synthesis",
+    "authors": [
+      "Zhiqin Chen",
+      "Kangxue Yin",
+      "Sanja Fidler"
+    ],
+    "venue": "CVPR",
+    "year": 2022,
+    "model": "GAN",
+    "guidance": [
+      "Unconditional",
+      "Image",
+      "3D Shape"
+    ],
+    "model_type": "Custom",
+    "generation_strategy": "Feed-forward + Optim.",
+    "texture_type": [
+      "RGB Tex."
+    ],
+    "tags": [
+      "aligned uv",
+      "texture transfer",
+      "3d shape"
+    ],
+    "links": {
+      "paper": "https://openaccess.thecvf.com/content/CVPR2022/papers/Chen_AUV-Net_Learning_Aligned_UV_Maps_for_Texture_Transfer_and_Synthesis_CVPR_2022_paper.pdf",
+      "project": "https://research.nvidia.com/labs/toronto-ai/AUV-NET/",
+      "code": "https://github.com/nv-tlabs/AUV-NET"
+    }
+  },
+  {
+    "id": "2021-semi-supervised-3d-human-textures",
+    "title": "Semi-supervised Synthesis of High-Resolution Editable Textures for 3D Humans",
+    "authors": [
+      "Bindita Chaudhuri",
+      "Nikolaos Sarafianos",
+      "Linda Shapiro",
+      "Tony Tung"
+    ],
+    "venue": "CVPR",
+    "year": 2021,
+    "model": "VAE + GAN",
+    "guidance": [
+      "Unconditional",
+      "Image"
+    ],
+    "model_type": "Pre-trained + Custom",
+    "generation_strategy": "Feed-forward",
+    "texture_type": [
+      "RGB Tex."
+    ],
+    "tags": [
+      "editable textures",
+      "human uv",
+      "region styles"
+    ],
+    "links": {
+      "paper": "https://openaccess.thecvf.com/content/CVPR2021/papers/Chaudhuri_Semi-Supervised_Synthesis_of_High-Resolution_Editable_Textures_for_3D_Humans_CVPR_2021_paper.pdf",
+      "project": "https://bindita.github.io/humantexturesynthesis.html"
+    }
+  },
+  {
+    "id": "2019-360-degree-textures",
+    "title": "360-Degree Textures of People in Clothing from a Single Image",
+    "authors": [
+      "Verica Lazova",
+      "Eldar Insafutdinov",
+      "Gerard Pons-Moll"
+    ],
+    "venue": "3DV",
+    "year": 2019,
+    "model": "GAN",
+    "guidance": [
+      "Image"
+    ],
+    "model_type": "Custom",
+    "generation_strategy": "Feed-forward",
+    "texture_type": [
+      "RGB Tex."
+    ],
+    "tags": [
+      "360-degree",
+      "human avatars",
+      "single image"
+    ],
+    "links": {
+      "paper": "https://virtualhumans.mpi-inf.mpg.de/papers/lazova3dv2019/lazova3dv2019.pdf",
+      "project": "https://virtualhumans.mpi-inf.mpg.de/360tex/"
+    }
+  },
+  {
+    "id": "2019-coordinate-based-texture-inpainting",
+    "title": "Coordinate-Based Texture Inpainting for Pose-Guided Human Image Generation",
+    "authors": [
+      "Artur Grigorev",
+      "Artem Sevastopolsky",
+      "Alexander Vakhitov",
+      "Victor Lempitsky"
+    ],
+    "venue": "CVPR",
+    "year": 2019,
+    "model": "GAN",
+    "guidance": [
+      "Image"
+    ],
+    "model_type": "Custom",
+    "generation_strategy": "Feed-forward",
+    "texture_type": [
+      "RGB Tex."
+    ],
+    "tags": [
+      "pose-guided",
+      "texture inpainting",
+      "garment transfer"
+    ],
+    "links": {
+      "paper": "https://openaccess.thecvf.com/content_CVPR_2019/papers/Grigorev_Coordinate-Based_Texture_Inpainting_for_Pose-Guided_Human_Image_Generation_CVPR_2019_paper.pdf",
+      "project": "https://saic-violet.github.io/coordinpaint/",
+      "code": "https://github.com/dolorousrtur/coordinate_based_inpainting"
+    }
+  },
+  {
+    "id": "2018-densepose",
+    "title": "DensePose: Dense Human Pose Estimation In The Wild",
+    "authors": [
+      "Rıza Alp Güler",
+      "Natalia Neverova",
+      "Iasonas Kokkinos"
+    ],
+    "venue": "CVPR",
+    "year": 2018,
+    "model": "GAN",
+    "guidance": [
+      "Image"
+    ],
+    "model_type": "Custom",
+    "generation_strategy": "Feed-forward",
+    "texture_type": [
+      "RGB Tex."
+    ],
+    "tags": [
+      "dense uv",
+      "human correspondences",
+      "pose prior"
+    ],
+    "links": {
+      "paper": "https://openaccess.thecvf.com/content_cvpr_2018/papers/Guler_DensePose_Dense_Human_CVPR_2018_paper.pdf",
+      "project": "https://densepose.org/",
+      "code": "https://github.com/facebookresearch/Densepose"
+    }
+  },
+  {
+    "id": "2018-uv-gan",
+    "title": "UV-GAN: Adversarial Facial UV Map Completion for Pose-invariant Face Recognition",
+    "authors": [
+      "Jiankang Deng",
+      "Shiyang Cheng",
+      "Niannan Xue",
+      "Yuxiang Zhou",
+      "Stefanos Zafeiriou"
+    ],
+    "venue": "CVPR",
+    "year": 2018,
+    "model": "GAN",
+    "guidance": [
+      "Image"
+    ],
+    "model_type": "Custom",
+    "generation_strategy": "Feed-forward",
+    "texture_type": [
+      "RGB Tex."
+    ],
+    "tags": [
+      "facial uv",
+      "uv completion",
+      "pose-invariant"
+    ],
+    "links": {
+      "paper": "https://openaccess.thecvf.com/content_cvpr_2018/papers/Deng_UV-GAN_Adversarial_Facial_CVPR_2018_paper.pdf"
+    }
+  },
+  {
+    "id": "2018-nmr",
+    "title": "Neural 3D Mesh Renderer",
+    "authors": [
+      "Hiroharu Kato",
+      "Yoshitaka Ushiku",
+      "Tatsuya Harada"
+    ],
+    "venue": "CVPR",
+    "year": 2018,
+    "model": "VGG",
+    "guidance": [
+      "Image"
+    ],
+    "model_type": "Pre-trained",
+    "generation_strategy": "Optim.",
+    "texture_type": [
+      "RGB Tex."
+    ],
+    "tags": [
+      "diff. rendering",
+      "mesh optimization",
+      "image-guided"
+    ],
+    "links": {
+      "paper": "https://openaccess.thecvf.com/content_cvpr_2018/papers/Kato_Neural_3D_Mesh_CVPR_2018_paper.pdf",
+      "project": "https://nmr.hiroharu-kato.com/",
+      "code": "https://github.com/hiroharu-kato/neural_renderer"
+    }
+  },
+  {
+    "id": "2022-dream-fields",
+    "title": "Zero-Shot Text-Guided Object Generation with Dream Fields",
+    "authors": [
+      "Ajay Jain",
+      "Ben Mildenhall",
+      "Jonathan T. Barron",
+      "Pieter Abbeel",
+      "Ben Poole"
+    ],
     "venue": "CVPR",
     "year": 2022,
     "model": "CLIP",
-    "guidance": ["Text", "CLIP"],
-    "model_type": "Pretrained",
-    "generation_strategy": "Optimization",
-    "texture_type": ["RGB"],
-    "tags": ["style", "mesh", "neural"],
-    "links": {"paper": "https://arxiv.org/abs/xxxx.xxxxx"}
+    "guidance": [
+      "Text"
+    ],
+    "model_type": "Pre-trained + Custom",
+    "generation_strategy": "Optim.",
+    "texture_type": [
+      "RGB Tex."
+    ],
+    "tags": [
+      "text-to-3d",
+      "nerf",
+      "zero-shot"
+    ],
+    "links": {
+      "paper": "https://openaccess.thecvf.com/content/CVPR2022/papers/Jain_Zero-Shot_Text-Guided_Object_Generation_With_Dream_Fields_CVPR_2022_paper.pdf",
+      "project": "https://ajayj.com/dreamfields",
+      "code": "https://github.com/google-research/google-research/tree/master/dreamfields"
+    }
+  },
+  {
+    "id": "2022-text2mesh",
+    "title": "Text2Mesh: Text-Driven Neural Stylization for Meshes",
+    "authors": [
+      "Oscar Michel",
+      "Roi Bar-On",
+      "Richard Liu",
+      "Sagie Benaim",
+      "Rana Hanocka"
+    ],
+    "venue": "CVPR",
+    "year": 2022,
+    "model": "CLIP",
+    "guidance": [
+      "Text"
+    ],
+    "model_type": "Pre-trained + Custom",
+    "generation_strategy": "Optim.",
+    "texture_type": [
+      "RGB Tex."
+    ],
+    "tags": [
+      "text stylization",
+      "mesh",
+      "clip-guided"
+    ],
+    "links": {
+      "paper": "https://openaccess.thecvf.com/content/CVPR2022/papers/Michel_Text2Mesh_Text-Driven_Neural_Stylization_for_Meshes_CVPR_2022_paper.pdf",
+      "project": "https://threedle.github.io/text2mesh/",
+      "code": "https://github.com/threedle/text2mesh"
+    }
+  },
+  {
+    "id": "2023-x-mesh",
+    "title": "X-Mesh: Towards Fast and Accurate Text-driven 3D Stylization via Dynamic Textual Guidance",
+    "authors": [
+      "Yiwei Ma",
+      "Xiaoqing Zhang",
+      "Xiaoshuai Sun",
+      "Jiayi Ji",
+      "Haowei Wang",
+      "Guannan Jiang",
+      "Weilin Zhuang",
+      "Rongrong Ji"
+    ],
+    "venue": "ICCV",
+    "year": 2023,
+    "model": "CLIP",
+    "guidance": [
+      "Text"
+    ],
+    "model_type": "Pre-trained + Custom",
+    "generation_strategy": "Optim.",
+    "texture_type": [
+      "RGB Tex."
+    ],
+    "tags": [
+      "text stylization",
+      "dynamic guidance",
+      "mesh"
+    ],
+    "links": {
+      "paper": "https://openaccess.thecvf.com/content/ICCV2023/papers/Ma_X-Mesh_Towards_Fast_and_Accurate_Text-driven_3D_Stylization_via_Dynamic_ICCV_2023_paper.pdf",
+      "project": "https://xmu-xiaoma666.github.io/Projects/X-Mesh/",
+      "code": "https://github.com/xmu-xiaoma666/X-Mesh"
+    }
+  },
+  {
+    "id": "2022-tango",
+    "title": "TANGO: Text-driven Photorealistic and Robust 3D Stylization via Lighting Decomposition",
+    "authors": [
+      "Yongwei Chen",
+      "Rui Chen",
+      "Jiabao Lei",
+      "Yabin Zhang",
+      "Kui Jia"
+    ],
+    "venue": "NeurIPS",
+    "year": 2022,
+    "model": "CLIP",
+    "guidance": [
+      "Text"
+    ],
+    "model_type": "Pre-trained + Custom",
+    "generation_strategy": "Optim.",
+    "texture_type": [
+      "PBR Mat."
+    ],
+    "tags": [
+      "photorealistic",
+      "pbr",
+      "lighting-aware"
+    ],
+    "links": {
+      "paper": "https://papers.neurips.cc/paper_files/paper/2022/file/c7b925e600ae4880f5c5d7557f70a72b-Paper-Conference.pdf",
+      "project": "https://cyw-3d.github.io/tango/",
+      "code": "https://github.com/Gorilla-Lab-SCUT/tango"
+    }
+  },
+  {
+    "id": "2022-clip-mesh",
+    "title": "CLIP-Mesh: Generating textured meshes from text using pretrained image-text models",
+    "authors": [
+      "Nasir Mohammad Khalid",
+      "Tianhao Xie",
+      "Eugene Belilovsky",
+      "Tiberiu Popa"
+    ],
+    "venue": "SIGGRAPH Asia",
+    "year": 2022,
+    "model": "CLIP",
+    "guidance": [
+      "Text"
+    ],
+    "model_type": "Pre-trained",
+    "generation_strategy": "Optim.",
+    "texture_type": [
+      "RGB Tex."
+    ],
+    "tags": [
+      "text-to-mesh",
+      "clip-guided",
+      "textured mesh"
+    ],
+    "links": {
+      "paper": "https://users.encs.concordia.ca/~stpopa/res/img/publications_info/2022/clipmesh/Nasir_SIGAsia2022.pdf",
+      "project": "https://www.nasir.lol/clipmesh",
+      "code": "https://github.com/NasirKhalid24/CLIP-Mesh"
+    }
+  },
+  {
+    "id": "2023-texture",
+    "title": "TEXTure: Text-Guided Texturing of 3D Shapes",
+    "authors": [
+      "Elad Richardson",
+      "Gal Metzer",
+      "Yuval Alaluf",
+      "Raja Giryes",
+      "Daniel Cohen-Or"
+    ],
+    "venue": "SIGGRAPH",
+    "year": 2023,
+    "model": "Diff. (2D)",
+    "guidance": [
+      "Text"
+    ],
+    "model_type": "Pre-trained",
+    "generation_strategy": "Iter.",
+    "texture_type": [
+      "RGB Tex."
+    ],
+    "tags": [
+      "text-guided",
+      "multi-view",
+      "texture transfer"
+    ],
+    "links": {
+      "paper": "https://arxiv.org/pdf/2302.01721.pdf",
+      "project": "https://texturepaper.github.io/TEXTurePaper/",
+      "code": "https://github.com/TEXTurePaper/TEXTurePaper"
+    }
+  },
+  {
+    "id": "2023-text2tex",
+    "title": "Text2Tex: Text-driven Texture Synthesis via Diffusion Models",
+    "authors": [
+      "Dave Zhenyu Chen",
+      "Yawar Siddiqui",
+      "Hsin-Ying Lee",
+      "Sergey Tulyakov",
+      "Matthias Nießner"
+    ],
+    "venue": "ICCV",
+    "year": 2023,
+    "model": "Diff. (2D)",
+    "guidance": [
+      "Text"
+    ],
+    "model_type": "Pre-trained",
+    "generation_strategy": "Iter.",
+    "texture_type": [
+      "RGB Tex."
+    ],
+    "tags": [
+      "text-guided",
+      "generate-then-refine",
+      "multi-view"
+    ],
+    "links": {
+      "paper": "https://openaccess.thecvf.com/content/ICCV2023/papers/Chen_Text2Tex_Text-driven_Texture_Synthesis_via_Diffusion_Models_ICCV_2023_paper.pdf",
+      "project": "https://daveredrum.github.io/Text2Tex/",
+      "code": "https://github.com/daveredrum/Text2Tex"
+    }
+  },
+  {
+    "id": "2023-texfusion",
+    "title": "TexFusion: Synthesizing 3D Textures with Text-Guided Image Diffusion Models",
+    "authors": [
+      "Tianshi Cao",
+      "Karsten Kreis",
+      "Sanja Fidler",
+      "Nicholas Sharp",
+      "Kangxue Yin"
+    ],
+    "venue": "ICCV",
+    "year": 2023,
+    "model": "Diff. (2D) + Neu. Fields",
+    "guidance": [
+      "Text"
+    ],
+    "model_type": "Pre-trained + Custom",
+    "generation_strategy": "Sync. + Optim.",
+    "texture_type": [
+      "RGB Tex."
+    ],
+    "tags": [
+      "synchronized views",
+      "latent texture",
+      "neural field"
+    ],
+    "links": {
+      "paper": "https://openaccess.thecvf.com/content/ICCV2023/papers/Cao_TexFusion_Synthesizing_3D_Textures_with_Text-Guided_Image_Diffusion_Models_ICCV_2023_paper.pdf",
+      "project": "https://research.nvidia.com/labs/toronto-ai/texfusion/"
+    }
+  },
+  {
+    "id": "2024-paint3d",
+    "title": "Paint3D: Paint Anything 3D with Lighting-Less Texture Diffusion Models",
+    "authors": [
+      "Xianfang Zeng",
+      "Xin Chen",
+      "Zhongqi Qi",
+      "Wen Liu",
+      "Zibo Zhao",
+      "Zhibin Wang",
+      "Bin Fu",
+      "Yong Liu",
+      "Gang Yu"
+    ],
+    "venue": "CVPR",
+    "year": 2024,
+    "model": "Diff. (2D+UV)",
+    "guidance": [
+      "Text",
+      "Image"
+    ],
+    "model_type": "Pre-trained + Custom",
+    "generation_strategy": "Iter. (+UV refine)",
+    "texture_type": [
+      "RGB Tex."
+    ],
+    "tags": [
+      "text/image-guided",
+      "uv refinement",
+      "lighting-less"
+    ],
+    "links": {
+      "paper": "https://openaccess.thecvf.com/content/CVPR2024/papers/Zeng_Paint3D_Paint_Anything_3D_with_Lighting-Less_Texture_Diffusion_Models_CVPR_2024_paper.pdf",
+      "project": "https://paint3d.github.io/",
+      "code": "https://github.com/OpenTexture/Paint3D"
+    }
+  },
+  {
+    "id": "2024-syncmvd",
+    "title": "Text-Guided Texturing by Synchronized Multi-View Diffusion",
+    "authors": [
+      "Yuxin Liu",
+      "Minshan Xie",
+      "Hanyuan Liu",
+      "Tien-Tsin Wong"
+    ],
+    "venue": "SIGGRAPH Asia",
+    "year": 2024,
+    "model": "Diff. (2D)",
+    "guidance": [
+      "Text"
+    ],
+    "model_type": "Pre-trained",
+    "generation_strategy": "Sync.",
+    "texture_type": [
+      "RGB Tex."
+    ],
+    "tags": [
+      "sync views",
+      "text-guided",
+      "latent fusion"
+    ],
+    "links": {
+      "paper": "https://arxiv.org/pdf/2311.12891.pdf",
+      "code": "https://github.com/LIU-Yuxin/SyncMVD"
+    }
+  },
+  {
+    "id": "2025-mvpaint",
+    "title": "MVPaint: Sync. Multi-View Diffusion for Painting Anything 3D",
+    "authors": [
+      "Wei Cheng",
+      "Juncheng Mu",
+      "Xianfang Zeng",
+      "Xin Chen",
+      "Anqi Pang",
+      "Chi Zhang",
+      "Zhibin Wang",
+      "Bin Fu",
+      "Gang Yu",
+      "Ziwei Liu",
+      "Liang Pan"
+    ],
+    "venue": "CVPR",
+    "year": 2025,
+    "model": "Diff. (2D+UV)",
+    "guidance": [
+      "Text"
+    ],
+    "model_type": "Pre-trained + Custom",
+    "generation_strategy": "Sync. (+refine)",
+    "texture_type": [
+      "RGB Tex."
+    ],
+    "tags": [
+      "sync views",
+      "uv refine",
+      "3d inpainting"
+    ],
+    "links": {
+      "paper": "https://openaccess.thecvf.com/content/CVPR2025/papers/Cheng_MVPaint_Synchronized_Multi-View_Diffusion_for_Painting_Anything_3D_CVPR_2025_paper.pdf",
+      "project": "https://mvpaint.github.io/",
+      "code": "https://github.com/3DTopia/MVPaint"
+    }
+  },
+  {
+    "id": "2024-texpainter",
+    "title": "TexPainter: Generative Mesh Texturing with Multi-view Consistency",
+    "authors": [
+      "Hongkun Zhang",
+      "Zherong Pan",
+      "Congyi Zhang",
+      "Lifeng Zhu",
+      "Xifeng Gao"
+    ],
+    "venue": "SIGGRAPH",
+    "year": 2024,
+    "model": "Diff. (2D)",
+    "guidance": [
+      "Text"
+    ],
+    "model_type": "Pre-trained",
+    "generation_strategy": "Sync. + Optim.",
+    "texture_type": [
+      "RGB Tex."
+    ],
+    "tags": [
+      "multi-view",
+      "ddim fusion",
+      "text-guided"
+    ],
+    "links": {
+      "paper": "https://arxiv.org/pdf/2406.18539.pdf",
+      "code": "https://github.com/Quantuman134/TexPainter"
+    }
+  },
+  {
+    "id": "2024-vcd-texture",
+    "title": "VCD-Texture: Variance Alignment based 3D-2D Co-Denoising for Text-Guided Texturing",
+    "authors": [
+      "Shang Liu",
+      "Chaohui Yu",
+      "Chenjie Cao",
+      "Wen Qian",
+      "Fan Wang"
+    ],
+    "venue": "ECCV",
+    "year": 2024,
+    "model": "Diff. (2D)",
+    "guidance": [
+      "Text"
+    ],
+    "model_type": "Pre-trained",
+    "generation_strategy": "Sync. (+refine)",
+    "texture_type": [
+      "RGB Tex."
+    ],
+    "tags": [
+      "co-denoising",
+      "variance align",
+      "refinement"
+    ],
+    "links": {
+      "paper": "https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/02053.pdf"
+    }
+  },
+  {
+    "id": "2024-texgen",
+    "title": "TexGen: Text-Guided 3D Texture Generation with Multi-view Sampling and Resampling",
+    "authors": [
+      "Dong Huo",
+      "Zixin Guo",
+      "Xinxin Zuo",
+      "Zhihao Shi",
+      "Juwei Lu",
+      "Peng Dai",
+      "Songcen Xu",
+      "Li Cheng",
+      "Yee-Hong Yang"
+    ],
+    "venue": "ECCV",
+    "year": 2024,
+    "model": "Diff. (2D)",
+    "guidance": [
+      "Text"
+    ],
+    "model_type": "Pre-trained",
+    "generation_strategy": "Sync.",
+    "texture_type": [
+      "RGB Tex."
+    ],
+    "tags": [
+      "resampling",
+      "sync views",
+      "detail preserving"
+    ],
+    "links": {
+      "paper": "https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/05550.pdf",
+      "project": "https://dong-huo.github.io/TexGen/",
+      "code": "https://github.com/CVMI-Lab/TEXGen"
+    }
+  },
+  {
+    "id": "2024-genesistex",
+    "title": "GenesisTex: Adapting Image Denoising Diffusion to Texture Space",
+    "authors": [
+      "Chenjian Gao",
+      "Boyan Jiang",
+      "Xinghui Li",
+      "Yingpeng Zhang",
+      "Qian Yu"
+    ],
+    "venue": "CVPR",
+    "year": 2024,
+    "model": "Diff. (2D)",
+    "guidance": [
+      "Text"
+    ],
+    "model_type": "Pre-trained",
+    "generation_strategy": "Sync. (+refine)",
+    "texture_type": [
+      "RGB Tex."
+    ],
+    "tags": [
+      "texture-space",
+      "sync views",
+      "refinement"
+    ],
+    "links": {
+      "paper": "https://openaccess.thecvf.com/content/CVPR2024/papers/Gao_GenesisTex_Adapting_Image_Denoising_Diffusion_to_Texture_Space_CVPR_2024_paper.pdf",
+      "project": "https://cjeen.github.io/GenesisTexPaper/"
+    }
+  },
+  {
+    "id": "2025-genesistex2",
+    "title": "GenesisTex2: Stable, Consistent and High-Quality Text-to-Texture Generation",
+    "authors": [
+      "Jiawei Lu",
+      "Yingpeng Zhang",
+      "Zengjun Zhao",
+      "He Wang",
+      "Kun Zhou",
+      "Tianjia Shao"
+    ],
+    "venue": "AAAI",
+    "year": 2025,
+    "model": "Diff. (2D)",
+    "guidance": [
+      "Text"
+    ],
+    "model_type": "Pre-trained",
+    "generation_strategy": "Sync.",
+    "texture_type": [
+      "RGB Tex."
+    ],
+    "tags": [
+      "local attention",
+      "latent merge",
+      "text-to-texture"
+    ],
+    "links": {
+      "paper": "https://ojs.aaai.org/index.php/AAAI/article/view/32621"
+    }
+  },
+  {
+    "id": "2025-flexitex",
+    "title": "FlexiTex: Enhancing Texture Generation via Visual Guidance",
+    "authors": [
+      "Dadong Jiang",
+      "Xianghui Yang",
+      "Zibo Zhao",
+      "Sheng Zhang",
+      "Jiaao Yu",
+      "Zeqiang Lai",
+      "Shaoxiong Yang",
+      "Chunchao Guo",
+      "Xiaobo Zhou",
+      "Zhihui Ke"
+    ],
+    "venue": "AAAI",
+    "year": 2025,
+    "model": "Diff. (2D)",
+    "guidance": [
+      "Text",
+      "Image"
+    ],
+    "model_type": "Pre-trained",
+    "generation_strategy": "Sync.",
+    "texture_type": [
+      "RGB Tex."
+    ],
+    "tags": [
+      "visual guidance",
+      "text/image",
+      "training-free"
+    ],
+    "links": {
+      "paper": "https://ojs.aaai.org/index.php/AAAI/article/view/32415/34570",
+      "project": "https://patrickddj.github.io/FlexiTex/"
+    }
+  },
+  {
+    "id": "2025-roompainter",
+    "title": "RoomPainter: View-Integrated Diffusion for Consistent Indoor Scene Texturing",
+    "authors": [
+      "Zhipeng Huang",
+      "Wangbo Yu",
+      "Xinhua Cheng",
+      "ChengShu Zhao",
+      "Yunyang Ge",
+      "Mingyi Guo",
+      "Li Yuan",
+      "Yonghong Tian"
+    ],
+    "venue": "CVPR",
+    "year": 2025,
+    "model": "Diff. (2D)",
+    "guidance": [
+      "Text"
+    ],
+    "model_type": "Pre-trained",
+    "generation_strategy": "Sync.",
+    "texture_type": [
+      "RGB Tex."
+    ],
+    "tags": [
+      "indoor scenes",
+      "global-local",
+      "sync views"
+    ],
+    "links": {
+      "paper": "https://openaccess.thecvf.com/content/CVPR2025/papers/Huang_RoomPainter_View-Integrated_Diffusion_for_Consistent_Indoor_Scene_Texturing_CVPR_2025_paper.pdf"
+    }
+  },
+  {
+    "id": "2024-instancetex",
+    "title": "InstanceTex: Instance-level Controllable Texture Synthesis for 3D Scenes via Diffusion Priors",
+    "authors": [
+      "Mingxin Yang",
+      "Jianwei Guo",
+      "Yuzhi Chen",
+      "Lan Chen",
+      "Pu Li",
+      "Zhanglin Cheng",
+      "Xiaopeng Zhang",
+      "Hui Huang"
+    ],
+    "venue": "SIGGRAPH Asia",
+    "year": 2024,
+    "model": "Diff. (2D) + Neu. Fields",
+    "guidance": [
+      "Text"
+    ],
+    "model_type": "Fine-tuned + Custom",
+    "generation_strategy": "Iter. + Optim.",
+    "texture_type": [
+      "RGB Tex."
+    ],
+    "tags": [
+      "scene texturing",
+      "instance control",
+      "diffusion priors"
+    ],
+    "links": {
+      "paper": "https://jianweiguo.net/publications/papers/2024-siga-InstanceTex_main.pdf",
+      "project": "https://vcc.tech/research/2024/InstanceTex"
+    }
+  },
+  {
+    "id": "2024-roomtex",
+    "title": "RoomTex: Texturing Compositional Indoor Scenes via Iterative Inpainting",
+    "authors": [
+      "Qi Wang",
+      "Ruijie Lu",
+      "Xudong Xu",
+      "Jingbo Wang",
+      "Michael Yu Wang",
+      "Bo Dai",
+      "Gang Zeng",
+      "Dan Xu"
+    ],
+    "venue": "ECCV",
+    "year": 2024,
+    "model": "Diff. (2D)",
+    "guidance": [
+      "Text"
+    ],
+    "model_type": "Pre-trained",
+    "generation_strategy": "Iter.",
+    "texture_type": [
+      "RGB Tex."
+    ],
+    "tags": [
+      "rooms",
+      "iterative inpaint",
+      "panorama prior"
+    ],
+    "links": {
+      "paper": "https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/08662.pdf",
+      "project": "https://qwang666.github.io/RoomTex/",
+      "code": "https://github.com/qwang666/RoomTex-"
+    }
+  },
+  {
+    "id": "2025-make-a-texture",
+    "title": "Make-A-Texture: Fast Shape-Aware Texture Generation in 3 Seconds",
+    "authors": [
+      "Xiaoyu Xiang",
+      "Liat Sless Gorelik",
+      "Yuchen Fan",
+      "Omri Armstrong",
+      "Forrest Iandola",
+      "Yilei Li",
+      "Ita Lifshitz",
+      "Rakesh Ranjan"
+    ],
+    "venue": "WACV",
+    "year": 2025,
+    "model": "Diff. (2D)",
+    "guidance": [
+      "Text"
+    ],
+    "model_type": "Pre-trained",
+    "generation_strategy": "Iter.",
+    "texture_type": [
+      "RGB Tex."
+    ],
+    "tags": [
+      "fast",
+      "depth-aware",
+      "view selection"
+    ],
+    "links": {
+      "paper": "https://openaccess.thecvf.com/content/WACV2025/papers/Gorelik_Make-A-Texture_Fast_Shape-Aware_3D_Texture_Generation_in_3_Seconds_WACV_2025_paper.pdf",
+      "project": "https://mukosame.github.io/make-a-texture/"
+    }
+  },
+  {
+    "id": "2025-aligntex",
+    "title": "AlignTex: Pixel-Precise Texture Generation from Multi-view Artwork",
+    "authors": [
+      "Yuqing Zhang",
+      "Hao Xu",
+      "Yiqian Wu",
+      "Sirui Chen",
+      "Sirui Lin",
+      "Xiang Li",
+      "Xifeng Gao",
+      "Xiaogang Jin"
+    ],
+    "venue": "SIGGRAPH",
+    "year": 2025,
+    "model": "Diff. (2D)",
+    "guidance": [
+      "Image"
+    ],
+    "model_type": "Fine-tuned",
+    "generation_strategy": "Feed-forward + Sync.",
+    "texture_type": [
+      "RGB Tex."
+    ],
+    "tags": [
+      "artwork-guided",
+      "pixel-precise",
+      "aligned views"
+    ],
+    "links": {
+      "paper": "https://dl.acm.org/doi/10.1145/3731158"
+    }
+  },
+  {
+    "id": "2024-texgen-700m",
+    "title": "TEXGen: a Generative Diffusion Model for Mesh Textures",
+    "authors": [
+      "Xin Yu",
+      "Ze Yuan",
+      "Yuan-Chen Guo",
+      "Ying-Tian Liu",
+      "Jianhui Liu",
+      "Yangguang Li",
+      "Yan-Pei Cao",
+      "Ding Liang",
+      "Xiaojuan Qi"
+    ],
+    "venue": "SIGGRAPH Asia",
+    "year": 2024,
+    "model": "Diff. (UV)",
+    "guidance": [
+      "Text",
+      "Image"
+    ],
+    "model_type": "Custom",
+    "generation_strategy": "Feed-forward",
+    "texture_type": [
+      "RGB Tex."
+    ],
+    "tags": [
+      "uv diffusion",
+      "700m model",
+      "text/image-guided"
+    ],
+    "links": {
+      "paper": "https://cvmi-lab.github.io/TEXGen/paper/TEXGen.pdf",
+      "project": "https://cvmi-lab.github.io/TEXGen/",
+      "code": "https://github.com/CVMI-Lab/TEXGen"
+    }
+  },
+  {
+    "id": "2024-single-mesh-dm",
+    "title": "Single Mesh Diffusion Models with Field Latents for Texture Generation",
+    "authors": [
+      "Thomas W. Mitchel",
+      "Carlos Esteves",
+      "Ameesh Makadia"
+    ],
+    "venue": "CVPR",
+    "year": 2024,
+    "model": "Diff. (on surface)",
+    "guidance": [
+      "Unconditional"
+    ],
+    "model_type": "Custom",
+    "generation_strategy": "Feed-forward",
+    "texture_type": [
+      "RGB Tex."
+    ],
+    "tags": [
+      "surface diffusion",
+      "single mesh",
+      "field latents"
+    ],
+    "links": {
+      "paper": "https://openaccess.thecvf.com/content/CVPR2024/papers/Mitchel_Single_Mesh_Diffusion_Models_with_Field_Latents_for_Texture_Generation_CVPR_2024_paper.pdf",
+      "project": "https://single-mesh-diffusion.github.io/",
+      "code": "https://github.com/google-research/google-research/tree/master/mesh_diffusion"
+    }
+  },
+  {
+    "id": "2024-diffusion-texture-painting",
+    "title": "Diffusion Texture Painting",
+    "authors": [
+      "Anita Hu",
+      "Nishkrit Desai",
+      "Hassan Abu Alhaija",
+      "Seung Wook Kim",
+      "Maria Shugrina"
+    ],
+    "venue": "SIGGRAPH",
+    "year": 2024,
+    "model": "Diff. (2D)",
+    "guidance": [
+      "Image",
+      "Brush"
+    ],
+    "model_type": "Fine-tuned",
+    "generation_strategy": "Feed-forward (interactive)",
+    "texture_type": [
+      "RGB Tex."
+    ],
+    "tags": [
+      "interactive",
+      "image brush",
+      "local inpaint"
+    ],
+    "links": {
+      "paper": "https://doi.org/10.1145/3641519.3657458",
+      "project": "https://research.nvidia.com/labs/toronto-ai/DiffusionTexturePainting/",
+      "code": "https://github.com/nv-tlabs/DiffusionTexturePainting"
+    }
+  },
+  {
+    "id": "2024-texturedreamer",
+    "title": "TextureDreamer: Image-Guided Texture Synthesis through Geometry-Aware Diffusion",
+    "authors": [
+      "Yu-Ying Yeh",
+      "Jia-Bin Huang",
+      "Changil Kim",
+      "Lei Xiao",
+      "Thu Nguyen-Phuoc",
+      "Numair Khan",
+      "Cheng Zhang",
+      "Manmohan Chandraker",
+      "Carl S. Marshall",
+      "Zhao Dong",
+      "Zhengqin Li"
+    ],
+    "venue": "CVPR",
+    "year": 2024,
+    "model": "Diff. (2D)",
+    "guidance": [
+      "Image"
+    ],
+    "model_type": "Fine-tuned + Custom",
+    "generation_strategy": "Optim.",
+    "texture_type": [
+      "PBR Mat."
+    ],
+    "tags": [
+      "image-guided",
+      "relightable",
+      "geometry-aware"
+    ],
+    "links": {
+      "paper": "https://openaccess.thecvf.com/content/CVPR2024/papers/Yeh_TextureDreamer_Image-Guided_Texture_Synthesis_Through_Geometry-Aware_Diffusion_CVPR_2024_paper.pdf",
+      "project": "https://texturedreamer.github.io/"
+    }
+  },
+  {
+    "id": "2024-styletex",
+    "title": "StyleTex: Style Image-Guided Texture Generation for 3D Models",
+    "authors": [
+      "Zhiyu Xie",
+      "Yuqing Zhang",
+      "Xiangjun Tang",
+      "Yiqian Wu",
+      "Dehan Chen",
+      "Gongsheng Li",
+      "Xiaogang Jin"
+    ],
+    "venue": "TOG",
+    "year": 2024,
+    "model": "Diff. (2D)",
+    "guidance": [
+      "Image"
+    ],
+    "model_type": "Pre-trained",
+    "generation_strategy": "Optim.",
+    "texture_type": [
+      "RGB Tex."
+    ],
+    "tags": [
+      "style-guided",
+      "geometry-aware",
+      "stylization"
+    ],
+    "links": {
+      "paper": "https://doi.org/10.1145/3687931",
+      "project": "https://xzyw7.github.io/StyleTex/",
+      "code": "https://github.com/XZYW7/StyleTex"
+    }
+  },
+  {
+    "id": "2024-flashtex",
+    "title": "FlashTex: Fast Relightable Mesh Texturing with LightControlNet",
+    "authors": [
+      "Kangle Deng",
+      "Timothy Omernick",
+      "Alexander Weiss",
+      "Deva Ramanan",
+      "Jun-Yan Zhu",
+      "Tinghui Zhou",
+      "Maneesh Agrawala"
+    ],
+    "venue": "ECCV",
+    "year": 2024,
+    "model": "Diff. (2D)",
+    "guidance": [
+      "Text"
+    ],
+    "model_type": "Fine-tuned + Custom",
+    "generation_strategy": "Sync. + Optim.",
+    "texture_type": [
+      "RGB Tex."
+    ],
+    "tags": [
+      "relightable",
+      "fast",
+      "LightControlNet"
+    ],
+    "links": {
+      "paper": "https://doi.org/10.1007/978-3-031-73383-3_6",
+      "project": "https://flashtex.github.io/",
+      "code": "https://github.com/Roblox/FlashTex"
+    }
+  },
+  {
+    "id": "2024-dreammat",
+    "title": "DreamMat: High-quality PBR Material Generation with Geometry- and Light-aware Diffusion Models",
+    "authors": [
+      "Yuqing Zhang",
+      "Yuan Liu",
+      "Zhiyu Xie",
+      "Lei Yang",
+      "Zhongyuan Liu",
+      "Mengzhou Yang",
+      "Runze Zhang",
+      "Qilong Kou",
+      "Cheng Lin",
+      "Wenping Wang",
+      "Xiaogang Jin"
+    ],
+    "venue": "SIGGRAPH",
+    "year": 2024,
+    "model": "Diff. (2D)",
+    "guidance": [
+      "Text"
+    ],
+    "model_type": "Fine-tuned + Custom",
+    "generation_strategy": "Optim.",
+    "texture_type": [
+      "PBR Mat."
+    ],
+    "tags": [
+      "pbr",
+      "relightable",
+      "light-aware"
+    ],
+    "links": {
+      "paper": "https://dl.acm.org/doi/10.1145/3658170",
+      "project": "https://zzzyuqing.github.io/dreammat.github.io/",
+      "code": "https://github.com/zzzyuqing/DreamMat"
+    }
+  },
+  {
+    "id": "2024-mapa",
+    "title": "MaPa: Text-driven Photorealistic Material Painting for 3D Shapes",
+    "authors": [
+      "Shangzhan Zhang",
+      "Sida Peng",
+      "Tao Xu",
+      "Yuanbo Yang",
+      "Tianrun Chen",
+      "Nan Xue",
+      "Yujun Shen",
+      "Hujun Bao",
+      "Ruizhen Hu",
+      "Xiaowei Zhou"
+    ],
+    "venue": "SIGGRAPH",
+    "year": 2024,
+    "model": "Diff. (2D)",
+    "guidance": [
+      "Text"
+    ],
+    "model_type": "Fine-tuned + Custom",
+    "generation_strategy": "Optim.",
+    "texture_type": [
+      "PBR Mat."
+    ],
+    "tags": [
+      "pbr",
+      "material graphs",
+      "part-aware"
+    ],
+    "links": {
+      "paper": "https://dl.acm.org/doi/10.1145/3641519.3657504",
+      "project": "https://zju3dv.github.io/MaPa/"
+    }
+  },
+  {
+    "id": "2023-decorate3d",
+    "title": "Decorate3D: Text-Driven High-Quality Texture Generation for Mesh Decoration in the Wild",
+    "authors": [
+      "Yanhui Guo",
+      "Xinxin Zuo",
+      "Peng Dai",
+      "Juwei Lu",
+      "Xiaolin Wu",
+      "Li Cheng",
+      "Youliang Yan",
+      "Songcen Xu",
+      "Xiaofei Wu"
+    ],
+    "venue": "NeurIPS",
+    "year": 2023,
+    "model": "Diff. (2D)",
+    "guidance": [
+      "Text",
+      "Image"
+    ],
+    "model_type": "Pre-trained + Custom",
+    "generation_strategy": "Optim.",
+    "texture_type": [
+      "RGB Tex."
+    ],
+    "tags": [
+      "mesh decoration",
+      "real objects",
+      "text/image-guided"
+    ],
+    "links": {
+      "paper": "https://proceedings.neurips.cc/paper_files/paper/2023/file/73af055566f5514b9863315133b84eda-Paper-Conference.pdf",
+      "project": "https://decorate3d.github.io/Decorate3D/",
+      "code": "https://github.com/Decorate3D/Decorate3D"
+    }
+  },
+  {
+    "id": "2024-3d-paintbrush",
+    "title": "3D Paintbrush: Local Stylization of 3D Shapes with Cascaded Score Distillation",
+    "authors": [
+      "Dale Decatur",
+      "Itai Lang",
+      "Kfir Aberman",
+      "Rana Hanocka"
+    ],
+    "venue": "CVPR",
+    "year": 2024,
+    "model": "Diff. (2D)",
+    "guidance": [
+      "Text"
+    ],
+    "model_type": "Pre-trained + Custom",
+    "generation_strategy": "Optim.",
+    "texture_type": [
+      "RGB Tex."
+    ],
+    "tags": [
+      "local editing",
+      "semantic regions",
+      "cascaded sds"
+    ],
+    "links": {
+      "paper": "https://openaccess.thecvf.com/content/CVPR2024/papers/Decatur_3D_Paintbrush_Local_Stylization_of_3D_Shapes_with_Cascaded_Score_CVPR_2024_paper.pdf",
+      "project": "https://threedle.github.io/3d-paintbrush/",
+      "code": "https://github.com/threedle/3d-paintbrush"
+    }
+  },
+  {
+    "id": "2024-easi-tex",
+    "title": "EASI-Tex: Edge-Aware Mesh Texturing from Single Image",
+    "authors": [
+      "Sai Raj Kishore Perla",
+      "Yizhi Wang",
+      "Ali Mahdavi-Amiri",
+      "Hao Zhang"
+    ],
+    "venue": "SIGGRAPH",
+    "year": 2024,
+    "model": "Diff. (2D)",
+    "guidance": [
+      "Image"
+    ],
+    "model_type": "Pre-trained",
+    "generation_strategy": "Iter.",
+    "texture_type": [
+      "RGB Tex."
+    ],
+    "tags": [
+      "single image",
+      "edge-aware",
+      "controlnet"
+    ],
+    "links": {
+      "paper": "https://dl.acm.org/doi/10.1145/3658222",
+      "project": "https://sairajk.github.io/easi-tex/",
+      "code": "https://github.com/sairajk/easi-tex"
+    }
+  },
+  {
+    "id": "2024-paint-it",
+    "title": "Paint-it: Text-to-Texture Synthesis via Deep Convolutional Texture Map Optimization and Physically-Based Rendering",
+    "authors": [
+      "Kim Youwang",
+      "Tae-Hyun Oh",
+      "Gerard Pons-Moll"
+    ],
+    "venue": "CVPR",
+    "year": 2024,
+    "model": "Diff. (2D)",
+    "guidance": [
+      "Text"
+    ],
+    "model_type": "Pre-trained + Custom",
+    "generation_strategy": "Optim.",
+    "texture_type": [
+      "PBR Mat."
+    ],
+    "tags": [
+      "text-guided",
+      "pbr",
+      "sds optimization"
+    ],
+    "links": {
+      "paper": "https://openaccess.thecvf.com/content/CVPR2024/papers/Youwang_Paint-it_Text-to-Texture_Synthesis_via_Deep_Convolutional_Texture_Map_Optimization_and_CVPR_2024_paper.pdf",
+      "project": "https://kim-youwang.github.io/paint-it",
+      "code": "https://github.com/kaist-ami/Paint-it"
+    }
+  },
+  {
+    "id": "2023-fantasia3d",
+    "title": "Fantasia3D: Disentangling Geometry and Appearance for High-quality Text-to-3D Content Creation",
+    "authors": [
+      "Rui Chen",
+      "Yongwei Chen",
+      "Ningxin Jiao",
+      "Kui Jia"
+    ],
+    "venue": "ICCV",
+    "year": 2023,
+    "model": "Diff. (2D)",
+    "guidance": [
+      "Text"
+    ],
+    "model_type": "Pre-trained + Custom",
+    "generation_strategy": "Optim.",
+    "texture_type": [
+      "PBR Mat."
+    ],
+    "tags": [
+      "text-to-3d",
+      "pbr",
+      "disentangled"
+    ],
+    "links": {
+      "paper": "https://openaccess.thecvf.com/content/ICCV2023/papers/Chen_Fantasia3D_Disentangling_Geometry_and_Appearance_for_High-quality_Text-to-3D_Content_Creation_ICCV_2023_paper.pdf",
+      "project": "https://fantasia3d.github.io/",
+      "code": "https://github.com/Gorilla-Lab-SCUT/Fantasia3D"
+    }
+  },
+  {
+    "id": "2025-material-anything",
+    "title": "Material Anything: Generating Materials for Any 3D Object via Diffusion",
+    "authors": [
+      "Xin Huang",
+      "Tengfei Wang",
+      "Ziwei Liu",
+      "Qing Wang"
+    ],
+    "venue": "CVPR",
+    "year": 2025,
+    "model": "Diff. (2D/UV)",
+    "guidance": [
+      "Text",
+      "3D Mesh"
+    ],
+    "model_type": "Feed-forward",
+    "generation_strategy": "Feed-forward",
+    "texture_type": [
+      "PBR Mat."
+    ],
+    "tags": [
+      "pbr",
+      "uv-ready",
+      "material generation"
+    ],
+    "links": {
+      "paper": "https://openaccess.thecvf.com/content/CVPR2025/papers/Huang_Material_Anything_Generating_Materials_for_Any_3D_Object_via_Diffusion_CVPR_2025_paper.pdf",
+      "project": "https://xhuangcv.github.io/MaterialAnything/",
+      "code": "https://github.com/3DTopia/MaterialAnything"
+    }
+  },
+  {
+    "id": "2024-texdreamer",
+    "title": "TexDreamer: Towards Zero-Shot High-Fidelity 3D Human Texture Generation",
+    "authors": [
+      "Yufei Liu",
+      "Junwei Zhu",
+      "Junshu Tang",
+      "Shijie Zhang",
+      "Jiangning Zhang",
+      "Weijian Cao",
+      "Chengjie Wang",
+      "Yunsheng Wu",
+      "Dongjin Huang"
+    ],
+    "venue": "ECCV",
+    "year": 2024,
+    "model": "Diff. (2D/UV)",
+    "guidance": [
+      "Text",
+      "Image"
+    ],
+    "model_type": "Fine-tuned",
+    "generation_strategy": "Feed-forward",
+    "texture_type": [
+      "RGB Tex."
+    ],
+    "tags": [
+      "humans",
+      "text/image-guided",
+      "uv generation"
+    ],
+    "links": {
+      "paper": "https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/06349.pdf",
+      "project": "https://ggxxii.github.io/texdreamer/",
+      "code": "https://github.com/ggxxii/texdreamer"
+    }
+  },
+  {
+    "id": "2024-make-it-vivid",
+    "title": "Make-It-Vivid: Dressing Your Animatable Biped Cartoon Characters from Text",
+    "authors": [
+      "Junshu Tang",
+      "Yanhong Zeng",
+      "Ke Fan",
+      "Xuheng Wang",
+      "Bo Dai",
+      "Kai Chen",
+      "Lizhuang Ma"
+    ],
+    "venue": "CVPR",
+    "year": 2024,
+    "model": "Diff. (2D/UV)",
+    "guidance": [
+      "Text"
+    ],
+    "model_type": "Fine-tuned",
+    "generation_strategy": "Feed-forward",
+    "texture_type": [
+      "RGB Tex."
+    ],
+    "tags": [
+      "cartoons",
+      "uv generation",
+      "character texturing"
+    ],
+    "links": {
+      "paper": "https://openaccess.thecvf.com/content/CVPR2024/papers/Tang_Make-It-Vivid_Dressing_Your_Animatable_Biped_Cartoon_Characters_from_Text_CVPR_2024_paper.pdf",
+      "project": "https://make-it-vivid.github.io/",
+      "code": "https://github.com/junshutang/Make-It-Vivid"
+    }
+  },
+  {
+    "id": "2024-fabricdiffusion",
+    "title": "FabricDiffusion: High-Fidelity Texture Transfer for 3D Garments Generation from In-The-Wild Images",
+    "authors": [
+      "Cheng Zhang",
+      "Yuanhao Wang",
+      "Francisco Vicente Carrasco",
+      "Chenglei Wu",
+      "Jinlong Yang",
+      "Thabo Beeler",
+      "Fernando De la Torre"
+    ],
+    "venue": "SIGGRAPH Asia",
+    "year": 2024,
+    "model": "Diff. (2D)",
+    "guidance": [
+      "Image"
+    ],
+    "model_type": "Fine-tuned",
+    "generation_strategy": "Feed-forward (UV/tile)",
+    "texture_type": [
+      "RGB Tex."
+    ],
+    "tags": [
+      "garments",
+      "tileable UV",
+      "image-guided"
+    ],
+    "links": {
+      "paper": "https://arxiv.org/abs/2410.01801",
+      "project": "https://humansensinglab.github.io/fabric-diffusion/",
+      "code": "https://github.com/humansensinglab/fabric-diffusion"
+    }
+  },
+  {
+    "id": "2025-texgarment",
+    "title": "TexGarment: Consistent Garment UV Texture Generation via Efficient 3D Structure-Guided Diffusion Transformer",
+    "authors": [
+      "Jialun Liu",
+      "Jinbo Wu",
+      "Xiaobo Gao",
+      "Jiakui Hu",
+      "Bojun Xiong",
+      "Xing Liu",
+      "Chen Zhao",
+      "Hongbin Pei",
+      "Haocheng Feng",
+      "Yingying Li",
+      "Errui Ding",
+      "Jingdong Wang"
+    ],
+    "venue": "CVPR",
+    "year": 2025,
+    "model": "Diff. (2D/UV)",
+    "guidance": [
+      "Text"
+    ],
+    "model_type": "Fine-tuned + Custom",
+    "generation_strategy": "Feed-forward",
+    "texture_type": [
+      "RGB Tex."
+    ],
+    "tags": [
+      "garments",
+      "UV generation",
+      "single-pass"
+    ],
+    "links": {
+      "paper": "https://openaccess.thecvf.com/content/CVPR2025/papers/Liu_TexGarment_Consistent_Garment_UV_Texture_Generation_via_Efficient_3D_Structure-Guided_CVPR_2025_paper.pdf"
+    }
+  },
+  {
+    "id": "2023-point-uv-diffusion",
+    "title": "Texture Generation on 3D Meshes with Point-UV Diffusion",
+    "authors": [
+      "Xin Yu",
+      "Peng Dai",
+      "Wenbo Li",
+      "Lan Ma",
+      "Zhengzhe Liu",
+      "Xiaojuan Qi"
+    ],
+    "venue": "ICCV",
+    "year": 2023,
+    "model": "Diff. (Point+UV)",
+    "guidance": [
+      "Unconditional",
+      "Text",
+      "Image"
+    ],
+    "model_type": "Custom",
+    "generation_strategy": "Feed-forward",
+    "texture_type": [
+      "RGB Tex."
+    ],
+    "tags": [
+      "point + UV",
+      "coarse-to-fine",
+      "multi-guided"
+    ],
+    "links": {
+      "paper": "https://openaccess.thecvf.com/content/ICCV2023/papers/Yu_Texture_Generation_on_3D_Meshes_with_Point-UV_Diffusion_ICCV_2023_paper.pdf",
+      "project": "https://cvmi-lab.github.io/Point-UV-Diffusion/",
+      "code": "https://github.com/CVMI-Lab/Point-UV-Diffusion"
+    }
+  },
+  {
+    "id": "2025-seqtex",
+    "title": "SeqTex: Generate Mesh Textures in Video Sequence",
+    "authors": [
+      "Ze Yuan",
+      "Xin Yu",
+      "Yangtian Sun",
+      "Yuan-Chen Guo",
+      "Yan-Pei Cao",
+      "Ding Liang",
+      "Xiaojuan Qi"
+    ],
+    "venue": "SIGGRAPH Asia",
+    "year": 2025,
+    "model": "Diff. (Video+UV)",
+    "guidance": [
+      "Text",
+      "Image"
+    ],
+    "model_type": "Fine-tuned",
+    "generation_strategy": "Sync.",
+    "texture_type": [
+      "RGB Tex."
+    ],
+    "tags": [
+      "video priors",
+      "UV + views",
+      "text/image-guided"
+    ],
+    "links": {
+      "paper": "https://arxiv.org/abs/2507.04285",
+      "project": "https://yuanze1024.github.io/SeqTex/",
+      "code": "https://github.com/VAST-AI-Research/SeqTex"
+    }
+  },
+  {
+    "id": "2025-romantex",
+    "title": "RomanTex: Decoupling 3D-aware Rotary Positional Embedded Multi-Attention Network for Texture Synthesis",
+    "authors": [
+      "Yifei Feng",
+      "Mingxin Yang",
+      "Shuhui Yang",
+      "Sheng Zhang",
+      "Jiaao Yu",
+      "Zibo Zhao",
+      "Yuhong Liu",
+      "Jie Jiang",
+      "Chunchao Guo"
+    ],
+    "venue": "ICCV",
+    "year": 2025,
+    "model": "Diff. (2D)",
+    "guidance": [
+      "Image"
+    ],
+    "model_type": "Fine-tuned",
+    "generation_strategy": "Sync.",
+    "texture_type": [
+      "RGB Tex."
+    ],
+    "tags": [
+      "image-guided",
+      "3D-aware attention",
+      "sync views"
+    ],
+    "links": {
+      "paper": "https://arxiv.org/abs/2503.19011",
+      "project": "https://oakshy.github.io/RomanTex/",
+      "code": "https://github.com/oakshy/RomanTex"
+    }
+  },
+  {
+    "id": "2025-materialmvp",
+    "title": "MaterialMVP: Illumination-Invariant Material Generation via Multi-view PBR Diffusion",
+    "authors": [
+      "Zebin He",
+      "Mingxin Yang",
+      "Shuhui Yang",
+      "Yixuan Tang",
+      "Tao Wang",
+      "Kaihao Zhang",
+      "Guanying Chen",
+      "Yuhong Liu",
+      "Jie Jiang",
+      "Chunchao Guo",
+      "Wenhan Luo"
+    ],
+    "venue": "ICCV",
+    "year": 2025,
+    "model": "Diff. (2D)",
+    "guidance": [
+      "Image"
+    ],
+    "model_type": "Fine-tuned",
+    "generation_strategy": "Sync.",
+    "texture_type": [
+      "PBR Mat."
+    ],
+    "tags": [
+      "pbr",
+      "image-guided",
+      "illumination-invariant"
+    ],
+    "links": {
+      "paper": "https://openaccess.thecvf.com/content/ICCV2025/papers/He_MaterialMVP_Illumination-Invariant_Material_Generation_via_Multi-view_PBR_Diffusion_ICCV_2025_paper.pdf",
+      "project": "https://zebinhe.github.io/MaterialMVP/",
+      "code": "https://github.com/ZebinHe/MaterialMVP"
+    }
+  },
+  {
+    "id": "2024-clay",
+    "title": "CLAY: A Controllable Large-scale Generative Model for Creating High-quality 3D Assets",
+    "authors": [
+      "Longwen Zhang",
+      "Ziyu Wang",
+      "Qixuan Zhang",
+      "Qiwei Qiu",
+      "Anqi Pang",
+      "Haoran Jiang",
+      "Wei Yang",
+      "Lan Xu",
+      "Jingyi Yu"
+    ],
+    "venue": "SIGGRAPH",
+    "year": 2024,
+    "model": "Diff. (2D)",
+    "guidance": [
+      "Text",
+      "Image"
+    ],
+    "model_type": "Custom",
+    "generation_strategy": "Sync.",
+    "texture_type": [
+      "PBR Mat."
+    ],
+    "tags": [
+      "text/image-guided",
+      "pbr",
+      "asset generator"
+    ],
+    "links": {
+      "paper": "https://dl.acm.org/doi/10.1145/3658146",
+      "project": "https://sites.google.com/view/clay-3dlm",
+      "code": "https://github.com/CLAY-3D/OpenCLAY"
+    }
+  },
+  {
+    "id": "2025-videomat",
+    "title": "VideoMat: Extracting PBR Mat. from Video Diffusion Models",
+    "authors": [
+      "Jacob Munkberg",
+      "Zian Wang",
+      "Ruofan Liang",
+      "Tianchang Shen",
+      "Jon Hasselgren"
+    ],
+    "venue": "EGSR",
+    "year": 2025,
+    "model": "Diff. (Video+PBR)",
+    "guidance": [
+      "Text",
+      "Image"
+    ],
+    "model_type": "Fine-tuned",
+    "generation_strategy": "Sync.",
+    "texture_type": [
+      "PBR Mat."
+    ],
+    "tags": [
+      "video diffusion",
+      "relightable",
+      "text/image-guided"
+    ],
+    "links": {
+      "paper": "https://arxiv.org/pdf/2506.09665.pdf",
+      "project": "https://nvlabs.github.io/videomat/"
+    }
+  },
+  {
+    "id": "2025-dreampbr",
+    "title": "DreamPBR: Text-driven Generation of High-resolution SVBRDF with Multi-modal Guidance",
+    "authors": [
+      "Linxuan Xin",
+      "Zheng Zhang",
+      "Zhiyi Pan",
+      "Jinfu Wei",
+      "Duan Gao",
+      "Wei Gao"
+    ],
+    "venue": "ICME",
+    "year": 2025,
+    "model": "Diff. (2D+PBR)",
+    "guidance": [
+      "Text",
+      "Multimodal"
+    ],
+    "model_type": "Fine-tuned + Custom",
+    "generation_strategy": "Feed-forward",
+    "texture_type": [
+      "PBR Mat."
+    ],
+    "tags": [
+      "svbrdf",
+      "multimodal",
+      "tileable"
+    ],
+    "links": {
+      "paper": "https://arxiv.org/pdf/2404.14676.pdf"
+    }
   }
 ]

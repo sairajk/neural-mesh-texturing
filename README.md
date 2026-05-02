@@ -13,7 +13,7 @@
   </p>
 
   <p align="center">
-    <a href="https://arxiv.org/abs/" target="_blank"><strong>arXiv</strong></a>
+    <a href="https://doi.org/10.1111/cgf.70392" target="_blank"><strong>Paper</strong></a>
     |
     <a href="https://sairajk.github.io/neural-mesh-texturing" target="_blank"><strong>Project Page</strong></a>
   </p>
@@ -33,11 +33,9 @@ If you found our work helpful, please consider citing:
 
 ```bibtex
 @article{perla2026NeuralMeshTexSurvey,
-    author = {Perla, Sai Raj Kishore and Mahdavi-Amiri, Ali and Zhang, Hao},
+    author = {Perla, Sai Raj Kishore and Zhang, Hao and Mahdavi-Amiri, Ali},
     title = {Advances in Neural 3D Mesh Texturing: A Survey},
     journal = {Eurographics STAR (State of The Art Reports), Computer Graphics Forum},
-    volume = {45},
-    number = {2},
     pages = {e70392},
     doi = {https://doi.org/10.1111/cgf.70392},
     url = {https://sairajk.github.io/neural-mesh-texturing},

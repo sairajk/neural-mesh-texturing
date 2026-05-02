@@ -13,7 +13,7 @@
   </p>
 
   <p align="center">
-    <a href="https://doi.org/10.1111/cgf.70392" target="_blank"><strong>Paper</strong></a>
+    <a href="static/paper/Neural_3D_Mesh_Texturing_Survey-EG_STAR_CGF_2026.pdf" target="_blank"><strong>Paper</strong></a>
     |
     <a href="https://sairajk.github.io/neural-mesh-texturing" target="_blank"><strong>Project Page</strong></a>
   </p>

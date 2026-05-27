@@ -209,7 +209,10 @@
     "guidance": [
       "3D Shape"
     ],
-    "model_type": "Pre-trained + Custom",
+    "model_type": [
+      "Pre-trained", 
+      "Custom"
+    ],
     "generation_strategy": "Optim.",
     "texture_type": [
       "RGB Tex."
@@ -305,7 +308,10 @@
       "Unconditional",
       "Image"
     ],
-    "model_type": "Pre-trained + Custom",
+    "model_type": [
+      "Pre-trained", 
+      "Custom"
+    ],
     "generation_strategy": "Feed-forward",
     "texture_type": [
       "RGB Tex."
@@ -486,7 +492,10 @@
     "guidance": [
       "Text"
     ],
-    "model_type": "Pre-trained + Custom",
+    "model_type": [
+      "Pre-trained", 
+      "Custom"
+    ],
     "generation_strategy": "Optim.",
     "texture_type": [
       "RGB Tex."
@@ -518,7 +527,10 @@
     "guidance": [
       "Text"
     ],
-    "model_type": "Pre-trained + Custom",
+    "model_type": [
+      "Pre-trained", 
+      "Custom"
+    ],
     "generation_strategy": "Optim.",
     "texture_type": [
       "RGB Tex."
@@ -553,7 +565,10 @@
     "guidance": [
       "Text"
     ],
-    "model_type": "Pre-trained + Custom",
+    "model_type": [
+      "Pre-trained", 
+      "Custom"
+    ],
     "generation_strategy": "Optim.",
     "texture_type": [
       "RGB Tex."
@@ -585,7 +600,10 @@
     "guidance": [
       "Text"
     ],
-    "model_type": "Pre-trained + Custom",
+    "model_type": [
+      "Pre-trained", 
+      "Custom"
+    ],
     "generation_strategy": "Optim.",
     "texture_type": [
       "PBR Mat."
@@ -712,7 +730,10 @@
     "guidance": [
       "Text"
     ],
-    "model_type": "Pre-trained + Custom",
+    "model_type": [
+      "Pre-trained", 
+      "Custom"
+    ],
     "generation_strategy": "Sync. + Optim.",
     "texture_type": [
       "RGB Tex."
@@ -748,7 +769,10 @@
       "Text",
       "Image"
     ],
-    "model_type": "Pre-trained + Custom",
+    "model_type": [
+      "Pre-trained", 
+      "Custom"
+    ],
     "generation_strategy": "Iter. (+UV refine)",
     "texture_type": [
       "RGB Tex."
@@ -816,7 +840,10 @@
     "guidance": [
       "Text"
     ],
-    "model_type": "Pre-trained + Custom",
+    "model_type": [
+      "Pre-trained", 
+      "Custom"
+    ],
     "generation_strategy": "Sync. (+refine)",
     "texture_type": [
       "RGB Tex."
@@ -1080,7 +1107,10 @@
     "guidance": [
       "Text"
     ],
-    "model_type": "Fine-tuned + Custom",
+    "model_type": [
+      "Fine-tuned", 
+      "Custom"
+    ],
     "generation_strategy": "Iter. + Optim.",
     "texture_type": [
       "RGB Tex."
@@ -1319,7 +1349,10 @@
     "guidance": [
       "Image"
     ],
-    "model_type": "Fine-tuned + Custom",
+    "model_type": [
+      "Fine-tuned", 
+      "Custom"
+    ],
     "generation_strategy": "Optim.",
     "texture_type": [
       "PBR Mat."
@@ -1386,7 +1419,10 @@
     "guidance": [
       "Text"
     ],
-    "model_type": "Fine-tuned + Custom",
+    "model_type": [
+      "Fine-tuned", 
+      "Custom"
+    ],
     "generation_strategy": "Sync. + Optim.",
     "texture_type": [
       "RGB Tex."
@@ -1424,7 +1460,10 @@
     "guidance": [
       "Text"
     ],
-    "model_type": "Fine-tuned + Custom",
+    "model_type": [
+      "Fine-tuned", 
+      "Custom"
+    ],
     "generation_strategy": "Optim.",
     "texture_type": [
       "PBR Mat."
@@ -1461,7 +1500,10 @@
     "guidance": [
       "Text"
     ],
-    "model_type": "Fine-tuned + Custom",
+    "model_type": [
+      "Fine-tuned", 
+      "Custom"
+    ],
     "generation_strategy": "Optim.",
     "texture_type": [
       "PBR Mat."
@@ -1497,7 +1539,10 @@
       "Text",
       "Image"
     ],
-    "model_type": "Pre-trained + Custom",
+    "model_type": [
+      "Pre-trained", 
+      "Custom"
+    ],
     "generation_strategy": "Optim.",
     "texture_type": [
       "RGB Tex."
@@ -1528,7 +1573,10 @@
     "guidance": [
       "Text"
     ],
-    "model_type": "Pre-trained + Custom",
+    "model_type": [
+      "Pre-trained", 
+      "Custom"
+    ],
     "generation_strategy": "Optim.",
     "texture_type": [
       "RGB Tex."
@@ -1589,7 +1637,10 @@
     "guidance": [
       "Text"
     ],
-    "model_type": "Pre-trained + Custom",
+    "model_type": [
+      "Pre-trained", 
+      "Custom"
+    ],
     "generation_strategy": "Optim.",
     "texture_type": [
       "PBR Mat."
@@ -1620,7 +1671,10 @@
     "guidance": [
       "Text"
     ],
-    "model_type": "Pre-trained + Custom",
+    "model_type": [
+      "Pre-trained", 
+      "Custom"
+    ],
     "generation_strategy": "Optim.",
     "texture_type": [
       "PBR Mat."
@@ -1796,7 +1850,10 @@
     "guidance": [
       "Text"
     ],
-    "model_type": "Fine-tuned + Custom",
+    "model_type": [
+      "Fine-tuned", 
+      "Custom"
+    ],
     "generation_strategy": "Feed-forward",
     "texture_type": [
       "RGB Tex."
@@ -2041,7 +2098,10 @@
       "Text",
       "Multimodal"
     ],
-    "model_type": "Fine-tuned + Custom",
+    "model_type": [
+      "Fine-tuned", 
+      "Custom"
+    ],
     "generation_strategy": "Feed-forward",
     "texture_type": [
       "PBR Mat."

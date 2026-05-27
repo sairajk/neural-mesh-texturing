@@ -51,6 +51,7 @@
   const qs  = (s) => document.querySelector(s);
   const qsa = (s) => Array.from(document.querySelectorAll(s));
   const dedupe = (a) => Array.from(new Set(a.filter(Boolean)));
+  const asList = (v) => Array.isArray(v) ? v.filter(Boolean) : (v ? [v] : []);
   const fromData = (f) => dedupe(ALL.flatMap(p => Array.isArray(p[f]) ? p[f] : (p[f] ? [p[f]] : [])).map(String));
   const facetVals = (f) => dedupe([...(PRESET[f]||[]), ...fromData(f)]).sort((a,b)=>String(a).localeCompare(String(b)));
 
@@ -222,8 +223,9 @@
         currentYear = y;
         html += `<li aria-hidden="true" style="margin-top:4px;"><h4 style="margin:12px 0 4px;">${y}</h4></li>`;
       }
-      const guidance = Array.isArray(p.guidance)?p.guidance:[p.guidance].filter(Boolean);
-      const texture  = Array.isArray(p.texture_type)?p.texture_type:[p.texture_type].filter(Boolean);
+      const guidance = asList(p.guidance);
+      const modelType = asList(p.model_type);
+      const texture  = asList(p.texture_type);
       html += `
         <li style="padding:12px; border:1px solid #eee; border-radius:12px; background:#fff;">
           <div style="display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;">
@@ -232,7 +234,7 @@
               <div style="font-size:13px; opacity:.85;">${(p.authors||[]).join(', ')}</div>
               <div style="font-size:12px; opacity:.7; margin-top:2px;">${p.venue||''} ${p.year||''}</div>
               <div style="margin-top:6px;">
-                ${[p.model, ...guidance, p.model_type, p.generation_strategy, ...texture].filter(Boolean).map(badge).join('')}
+                ${[p.model, ...guidance, ...modelType, p.generation_strategy, ...texture].filter(Boolean).map(badge).join('')}
               </div>
             </div>
             <div style="display:flex; gap:10px; align-items:center;">
@@ -259,8 +261,9 @@
       return;
     }
     const rows = [...items].sort((a,b)=>(Number(b.year)||0)-(Number(a.year)||0)).map(p=>{
-      const g = Array.isArray(p.guidance)?p.guidance.join(', '):(p.guidance||'');
-      const t = Array.isArray(p.texture_type)?p.texture_type.join(', '):(p.texture_type||'');
+      const g = asList(p.guidance).join(', ');
+      const mt = asList(p.model_type).join(', ');
+      const t = asList(p.texture_type).join(', ');
       return `
         <tr>
           <td>${p.title}</td>
@@ -269,7 +272,7 @@
           <td style="text-align:center;">${p.year||''}</td>
           <td>${p.model||''}</td>
           <td>${g}</td>
-          <td>${p.model_type||''}</td>
+          <td>${mt}</td>
           <td>${p.generation_strategy||''}</td>
           <td>${t}</td>
           <td>
@@ -339,8 +342,9 @@
 
     let currentYear = null;
     const rows = sorted.map(p=>{
-      const guidance = Array.isArray(p.guidance) ? p.guidance : (p.guidance ? [p.guidance] : []);
-      const texture  = Array.isArray(p.texture_type) ? p.texture_type : (p.texture_type ? [p.texture_type] : []);
+      const guidance = asList(p.guidance);
+      const modelType = asList(p.model_type);
+      const texture  = asList(p.texture_type);
       const y = p.year ?? '';
       let yearHeading = '';
       if (y && y !== currentYear){
@@ -360,7 +364,7 @@
           <div class="hyb-attrs">
             <div>${p.model ? pill(p.model) : '—'}</div>
             <div>${guidance.length ? guidance.map(pill).join(' ') : '—'}</div>
-            <div>${p.model_type ? pill(p.model_type) : '—'}</div>
+            <div>${modelType.length ? modelType.map(pill).join(' ') : '—'}</div>
             <div>${p.generation_strategy ? pill(p.generation_strategy) : '—'}</div>
             <div>${texture.length ? texture.map(pill).join(' ') : '—'}</div>
           </div>

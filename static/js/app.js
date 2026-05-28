@@ -60,8 +60,13 @@
   }[c.charCodeAt(0)]));
   const formatBubbleLabel = (v) =>
     escapeHTML(v).replace(/\(([^()]*)\)/g, "<span class=\"pill-detail\">($1)</span>");
-  const fromData = (f) => dedupe(ALL.flatMap(p => Array.isArray(p[f]) ? p[f] : (p[f] ? [p[f]] : [])).map(String));
-  const facetVals = (f) => dedupe([...(PRESET[f]||[]), ...fromData(f)]).sort((a,b)=>String(a).localeCompare(String(b)));
+  const baseFacetValue = (v) => String(v)
+    .replace(/\s*\([^)]*\)/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+  const fromData = (f) => dedupe(ALL.flatMap(p => asList(p[f]).map(baseFacetValue)));
+  const facetVals = (f) => dedupe([...(PRESET[f]||[]).map(baseFacetValue), ...fromData(f)])
+    .sort((a,b)=>String(a).localeCompare(String(b)));
 
   function showError(msg){
     console.error(msg);
@@ -76,7 +81,7 @@
     const p = new URLSearchParams(location.search);
     state.q = p.get('q') || '';
     state.view = p.get('view') || 'hybrid';
-    FACETS.forEach(f => state.filters[f] = new Set((p.get(f)||'').split(',').filter(Boolean)));
+    FACETS.forEach(f => state.filters[f] = new Set((p.get(f)||"").split(",").map(baseFacetValue).filter(Boolean)));
   }
   function pushURL(){
     const p = new URLSearchParams();
@@ -194,8 +199,8 @@
     return list.filter(p =>
       FACETS.every(f => {
         const sel = state.filters[f]; if (!sel.size) return true;
-        const values = Array.isArray(p[f]) ? p[f].map(String) : [String(p[f] ?? '')];
-        return [...sel].some(v => values.includes(v));
+        const values = asList(p[f]).map(baseFacetValue);
+        return [...sel].some(v => values.includes(baseFacetValue(v)));
       })
     );
   }

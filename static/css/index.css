@@ -636,10 +636,62 @@ h4, h5, h6 { font-weight: 500; }
   color: #85445a;
 }
 
-/* Responsive: stack columns on narrow screens */
+/* Responsive: shrink the results table to fit narrow screens */
 @media (max-width: 900px){
-  .hyb-header, .hyb-row{ grid-template-columns: 1fr; }
-  .hyb-links{ align-items: flex-start; } /* right column becomes left on small screens */
+  #cards{
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  .hyb-header,
+  .hyb-row{
+    grid-template-columns: minmax(0, 36%) minmax(0, 56%) minmax(0, 8%);
+    gap: 4px;
+  }
+  .hyb-header{
+    padding: 6px 5px;
+    font-size: clamp(6px, 1.8vw, 12px);
+  }
+  .hyb-row{
+    padding: 7px 5px;
+  }
+  .hyb-attrs{
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 2px;
+  }
+  .hyb-row .hyb-attrs > div{
+    row-gap: 2px;
+  }
+  .hyb-left .paper-title{
+    font-size: clamp(7px, 2.1vw, 12px);
+    line-height: 1.2;
+  }
+  .hyb-left .paper-authors{
+    font-size: clamp(6px, 1.75vw, 10px);
+    line-height: 1.2;
+  }
+  .paper-meta{
+    margin-top: 4px;
+    padding: 1px 4px;
+    font-size: clamp(6px, 1.7vw, 10px);
+  }
+  .pill{
+    max-width: 100%;
+    padding: 0.12em 0.35em;
+    font-size: clamp(5px, 1.55vw, 9px);
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+  .hyb-links{
+    gap: 2px;
+  }
+  .hyb-links a{
+    font-size: clamp(6px, 1.7vw, 10px);
+    line-height: 1.15;
+  }
+  .hyb-year{
+    font-size: 20px;
+  }
 }
 
 

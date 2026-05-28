@@ -647,9 +647,8 @@ h4, h5, h6 { font-weight: 500; }
 .hyb-header > div,
 .hyb-header .hyb-attrs > div { text-align: center; }
 
-/* ...except the first column header (left-aligned, black) */
+/* Header text color */
 .hyb-header { color: #000; } /* text-align sets horizontal alignment. :contentReference[oaicite:0]{index=0} */
-.hyb-header .hyb-left-title { text-align: left; } /* text-align sets horizontal alignment. :contentReference[oaicite:0]{index=0} */
 
 /* Paper title (data cell) explicitly black for contrast */
 /* .hyb-left .paper-title { color: #000; } */

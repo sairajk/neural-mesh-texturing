@@ -18,9 +18,9 @@
 
   // Pretty labels for chip keys (fallback to PascalCase)
   const LABELS = {
-    model: 'Model',
+    model: 'ModelType',
     guidance: 'Guidance',
-    model_type: 'ModelType',
+    model_type: 'TrainingStrategy',
     generation_strategy: 'GenerationStrategy',
     texture_type: 'TextureType',
     q: 'Search'
@@ -310,11 +310,11 @@
               <th scope="col" style="text-align:left;">Authors</th>
               <th scope="col" style="text-align:left;">Venue</th>
               <th scope="col" style="text-align:center;" aria-sort="descending">Year</th>
-              <th scope="col" style="text-align:left;">Model</th>
-              <th scope="col" style="text-align:left;">Guidance</th>
               <th scope="col" style="text-align:left;">Model Type</th>
-              <th scope="col" style="text-align:left;">Generation</th>
-              <th scope="col" style="text-align:left;">Texture</th>
+              <th scope="col" style="text-align:left;">Guidance</th>
+              <th scope="col" style="text-align:left;">Training Strategy</th>
+              <th scope="col" style="text-align:left;">Generation Strategy</th>
+              <th scope="col" style="text-align:left;">Texture Type</th>
               <th scope="col" style="text-align:left;">Links</th>
             </tr>
           </thead>
@@ -344,13 +344,13 @@
     // Header (center titles in each column)
     const header = `
       <div class="hyb-header">
-        <div class="hyb-left-title">Title / Authors</div>
+        <div class="hyb-left-title">Paper</div>
         <div class="hyb-attrs">
-          <div>Model</div>
-          <div>Guidance</div>
           <div>Model Type</div>
-          <div>Generation</div>
-          <div>Texture</div>
+          <div>Guidance</div>
+          <div>Training Strategy</div>
+          <div>Generation Strategy</div>
+          <div>Texture Type</div>
         </div>
         <div>Links</div>
       </div>`;

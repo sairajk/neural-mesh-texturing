@@ -260,11 +260,11 @@
           </h2>
           <p class="content" style="max-width: 800px; margin: 20px auto 15px; text-align: center;">
             A growing list of works in <em>Neural 3D Mesh Texturing</em>.
-            Each work is characterized by <strong>Model</strong> (the type of model being used),
-            <strong>Guidance</strong> (the type of stylistic guidance which controls texture appearance),
-            <strong>Model Type</strong> (whether the model is pre-trained, fine-tuned, or custom trained for the texturing task),
-            <strong>Generation Strategy</strong> (the way textures are generated: Optimization / Iterative / Synchronized / Feed-Forward),
-            and <strong>Texture Type</strong> (RGB textures, with baked-in lighting effects, or disentangled PBR materials).
+            Each work is characterized by <strong>Model Type</strong> (the neural model or backbone used),
+            <strong>Guidance</strong> (the "stylistic" input controlling texture appearance),
+            <strong>Training Strategy</strong> (whether the model is Pre-trained, Fine-tuned, or Custom trained for the texturing task),
+            <strong>Generation Strategy</strong> (how textures are generated: Optimization, Iterative, Synchronized, or Feed-forward),
+            & output <strong>Texture Type</strong> (RGB textures, often with baked-in lighting effects, or disentangled PBR materials).
           </p>
           <p class="content note-text" style="max-width: 600px; margin: 20px auto 0px; text-align: center;">
             <strong><u>Note:</u></strong> This list is not exhaustive. If we missed your work or tagged it incorrectly,
@@ -291,7 +291,7 @@
                   gap:12px; flex-wrap:wrap; margin:20px 0;">
         <div class="filter-group" data-facet="model">
           <button class="menu-trigger" aria-haspopup="true" aria-expanded="false">
-            Model <span class="chev" aria-hidden="true"></span>
+            Model Type <span class="chev" aria-hidden="true"></span>
           </button>
           <div class="menu" role="menu"></div>
         </div>
@@ -305,14 +305,14 @@
 
         <div class="filter-group" data-facet="model_type">
           <button class="menu-trigger" aria-haspopup="true" aria-expanded="false">
-            Model Type <span class="chev" aria-hidden="true"></span>
+            Training Strategy <span class="chev" aria-hidden="true"></span>
           </button>
           <div class="menu" role="menu"></div>
         </div>
 
         <div class="filter-group" data-facet="generation_strategy">
           <button class="menu-trigger" aria-haspopup="true" aria-expanded="false">
-            Generation <span class="chev" aria-hidden="true"></span>
+            Generation Strategy <span class="chev" aria-hidden="true"></span>
           </button>
           <div class="menu" role="menu"></div>
         </div>

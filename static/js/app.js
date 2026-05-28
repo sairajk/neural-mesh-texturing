@@ -229,7 +229,7 @@
       const y = p.year ?? '';
       if (y && y !== currentYear){
         currentYear = y;
-        html += `<li aria-hidden="true" style="margin-top:4px;"><h4 style="margin:12px 0 4px;">${y}</h4></li>`;
+        html += `<li aria-hidden="true" style="margin-top:4px;"><h4 class="hyb-year">${y}</h4></li>`;
       }
       const model = asList(p.model);
       const guidance = asList(p.guidance);

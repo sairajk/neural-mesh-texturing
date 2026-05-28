@@ -11,7 +11,7 @@
     ],
     "venue": "ICCV",
     "year": 2019,
-    "model": "Neu. Fields",
+    "model": "Neural Fields",
     "guidance": [
       "Unconditional",
       "Image"
@@ -34,7 +34,7 @@
   },
   {
     "id": "2020-adversarial-texture-optimization",
-    "title": "Adversarial Texture Optim. from RGB-D Scans",
+    "title": "Adversarial Texture Optimization from RGB-D Scans",
     "authors": [
       "Jingwei Huang",
       "Justus Thies",
@@ -52,7 +52,7 @@
       "Image"
     ],
     "model_type": "Custom",
-    "generation_strategy": "Optim.",
+    "generation_strategy": "Optimization",
     "texture_type": [
       "RGB Tex."
     ],
@@ -141,13 +141,19 @@
     ],
     "venue": "ICCV",
     "year": 2023,
-    "model": "GAN + Neu. Fields",
+    "model": [
+      "GAN",
+      "Neural Fields"
+    ],
     "guidance": [
       "Unconditional",
       "Image"
     ],
     "model_type": "Custom",
-    "generation_strategy": "Feed-forward + Optim.",
+    "generation_strategy": [
+      "Feed-forward", 
+      "Optimization"
+    ],
     "texture_type": [
       "RGB Tex."
     ],
@@ -213,7 +219,7 @@
       "Pre-trained", 
       "Custom"
     ],
-    "generation_strategy": "Optim.",
+    "generation_strategy": "Optimization",
     "texture_type": [
       "RGB Tex."
     ],
@@ -277,7 +283,10 @@
       "3D Shape"
     ],
     "model_type": "Custom",
-    "generation_strategy": "Feed-forward + Optim.",
+    "generation_strategy": [
+      "Feed-forward", 
+      "Optimization"
+    ],
     "texture_type": [
       "RGB Tex."
     ],
@@ -303,7 +312,10 @@
     ],
     "venue": "CVPR",
     "year": 2021,
-    "model": "VAE + GAN",
+    "model": [
+      "VAE",
+      "GAN"
+    ],
     "guidance": [
       "Unconditional",
       "Image"
@@ -461,7 +473,7 @@
       "Image"
     ],
     "model_type": "Pre-trained",
-    "generation_strategy": "Optim.",
+    "generation_strategy": "Optimization",
     "texture_type": [
       "RGB Tex."
     ],
@@ -496,7 +508,7 @@
       "Pre-trained", 
       "Custom"
     ],
-    "generation_strategy": "Optim.",
+    "generation_strategy": "Optimization",
     "texture_type": [
       "RGB Tex."
     ],
@@ -531,7 +543,7 @@
       "Pre-trained", 
       "Custom"
     ],
-    "generation_strategy": "Optim.",
+    "generation_strategy": "Optimization",
     "texture_type": [
       "RGB Tex."
     ],
@@ -569,7 +581,7 @@
       "Pre-trained", 
       "Custom"
     ],
-    "generation_strategy": "Optim.",
+    "generation_strategy": "Optimization",
     "texture_type": [
       "RGB Tex."
     ],
@@ -604,7 +616,7 @@
       "Pre-trained", 
       "Custom"
     ],
-    "generation_strategy": "Optim.",
+    "generation_strategy": "Optimization",
     "texture_type": [
       "PBR Mat."
     ],
@@ -635,7 +647,7 @@
       "Text"
     ],
     "model_type": "Pre-trained",
-    "generation_strategy": "Optim.",
+    "generation_strategy": "Optimization",
     "texture_type": [
       "RGB Tex."
     ],
@@ -662,12 +674,12 @@
     ],
     "venue": "SIGGRAPH",
     "year": 2023,
-    "model": "Diff. (2D)",
+    "model": "Diffusion (2D)",
     "guidance": [
       "Text"
     ],
     "model_type": "Pre-trained",
-    "generation_strategy": "Iter.",
+    "generation_strategy": "Iterative",
     "texture_type": [
       "RGB Tex."
     ],
@@ -694,12 +706,12 @@
     ],
     "venue": "ICCV",
     "year": 2023,
-    "model": "Diff. (2D)",
+    "model": "Diffusion (2D)",
     "guidance": [
       "Text"
     ],
     "model_type": "Pre-trained",
-    "generation_strategy": "Iter.",
+    "generation_strategy": "Iterative",
     "texture_type": [
       "RGB Tex."
     ],
@@ -726,7 +738,10 @@
     ],
     "venue": "ICCV",
     "year": 2023,
-    "model": "Diff. (2D) + Neu. Fields",
+    "model": [
+      "Diffusion (2D)", 
+      "Neural Fields"
+    ],
     "guidance": [
       "Text"
     ],
@@ -734,7 +749,10 @@
       "Pre-trained", 
       "Custom"
     ],
-    "generation_strategy": "Sync. + Optim.",
+    "generation_strategy": [
+      "Synchronized",
+      "Optimization"
+    ],
     "texture_type": [
       "RGB Tex."
     ],
@@ -764,7 +782,7 @@
     ],
     "venue": "CVPR",
     "year": 2024,
-    "model": "Diff. (2D+UV)",
+    "model": "Diffusion (2D+UV)",
     "guidance": [
       "Text",
       "Image"
@@ -773,7 +791,7 @@
       "Pre-trained", 
       "Custom"
     ],
-    "generation_strategy": "Iter. (+UV refine)",
+    "generation_strategy": "Iterative (+UV refine)",
     "texture_type": [
       "RGB Tex."
     ],
@@ -799,12 +817,12 @@
     ],
     "venue": "SIGGRAPH Asia",
     "year": 2024,
-    "model": "Diff. (2D)",
+    "model": "Diffusion (2D)",
     "guidance": [
       "Text"
     ],
     "model_type": "Pre-trained",
-    "generation_strategy": "Sync.",
+    "generation_strategy": "Synchronized",
     "texture_type": [
       "RGB Tex."
     ],
@@ -820,7 +838,7 @@
   },
   {
     "id": "2025-mvpaint",
-    "title": "MVPaint: Sync. Multi-View Diffusion for Painting Anything 3D",
+    "title": "MVPaint: Synchronized Multi-View Diffusion for Painting Anything 3D",
     "authors": [
       "Wei Cheng",
       "Juncheng Mu",
@@ -836,7 +854,7 @@
     ],
     "venue": "CVPR",
     "year": 2025,
-    "model": "Diff. (2D+UV)",
+    "model": "Diffusion (2D+UV)",
     "guidance": [
       "Text"
     ],
@@ -844,7 +862,7 @@
       "Pre-trained", 
       "Custom"
     ],
-    "generation_strategy": "Sync. (+refine)",
+    "generation_strategy": "Synchronized (+refine)",
     "texture_type": [
       "RGB Tex."
     ],
@@ -871,12 +889,15 @@
     ],
     "venue": "SIGGRAPH",
     "year": 2024,
-    "model": "Diff. (2D)",
+    "model": "Diffusion (2D)",
     "guidance": [
       "Text"
     ],
     "model_type": "Pre-trained",
-    "generation_strategy": "Sync. + Optim.",
+    "generation_strategy": [
+      "Synchronized",
+      "Optimization"
+    ],
     "texture_type": [
       "RGB Tex."
     ],
@@ -902,12 +923,12 @@
     ],
     "venue": "ECCV",
     "year": 2024,
-    "model": "Diff. (2D)",
+    "model": "Diffusion (2D)",
     "guidance": [
       "Text"
     ],
     "model_type": "Pre-trained",
-    "generation_strategy": "Sync. (+refine)",
+    "generation_strategy": "Synchronized (+refine)",
     "texture_type": [
       "RGB Tex."
     ],
@@ -936,12 +957,12 @@
     ],
     "venue": "ECCV",
     "year": 2024,
-    "model": "Diff. (2D)",
+    "model": "Diffusion (2D)",
     "guidance": [
       "Text"
     ],
     "model_type": "Pre-trained",
-    "generation_strategy": "Sync.",
+    "generation_strategy": "Synchronized",
     "texture_type": [
       "RGB Tex."
     ],
@@ -968,12 +989,12 @@
     ],
     "venue": "CVPR",
     "year": 2024,
-    "model": "Diff. (2D)",
+    "model": "Diffusion (2D)",
     "guidance": [
       "Text"
     ],
     "model_type": "Pre-trained",
-    "generation_strategy": "Sync. (+refine)",
+    "generation_strategy": "Synchronized (+refine)",
     "texture_type": [
       "RGB Tex."
     ],
@@ -1000,12 +1021,12 @@
     ],
     "venue": "AAAI",
     "year": 2025,
-    "model": "Diff. (2D)",
+    "model": "Diffusion (2D)",
     "guidance": [
       "Text"
     ],
     "model_type": "Pre-trained",
-    "generation_strategy": "Sync.",
+    "generation_strategy": "Synchronized",
     "texture_type": [
       "RGB Tex."
     ],
@@ -1035,13 +1056,13 @@
     ],
     "venue": "AAAI",
     "year": 2025,
-    "model": "Diff. (2D)",
+    "model": "Diffusion (2D)",
     "guidance": [
       "Text",
       "Image"
     ],
     "model_type": "Pre-trained",
-    "generation_strategy": "Sync.",
+    "generation_strategy": "Synchronized",
     "texture_type": [
       "RGB Tex."
     ],
@@ -1070,12 +1091,12 @@
     ],
     "venue": "CVPR",
     "year": 2025,
-    "model": "Diff. (2D)",
+    "model": "Diffusion (2D)",
     "guidance": [
       "Text"
     ],
     "model_type": "Pre-trained",
-    "generation_strategy": "Sync.",
+    "generation_strategy": "Synchronized",
     "texture_type": [
       "RGB Tex."
     ],
@@ -1103,7 +1124,10 @@
     ],
     "venue": "SIGGRAPH Asia",
     "year": 2024,
-    "model": "Diff. (2D) + Neu. Fields",
+    "model": [
+      "Diffusion (2D)",
+      "Neural Fields"
+    ],
     "guidance": [
       "Text"
     ],
@@ -1111,7 +1135,10 @@
       "Fine-tuned", 
       "Custom"
     ],
-    "generation_strategy": "Iter. + Optim.",
+    "generation_strategy": [
+      "Iterative",
+      "Optimization"
+    ],
     "texture_type": [
       "RGB Tex."
     ],
@@ -1140,12 +1167,12 @@
     ],
     "venue": "ECCV",
     "year": 2024,
-    "model": "Diff. (2D)",
+    "model": "Diffusion (2D)",
     "guidance": [
       "Text"
     ],
     "model_type": "Pre-trained",
-    "generation_strategy": "Iter.",
+    "generation_strategy": "Iterative",
     "texture_type": [
       "RGB Tex."
     ],
@@ -1175,12 +1202,12 @@
     ],
     "venue": "WACV",
     "year": 2025,
-    "model": "Diff. (2D)",
+    "model": "Diffusion (2D)",
     "guidance": [
       "Text"
     ],
     "model_type": "Pre-trained",
-    "generation_strategy": "Iter.",
+    "generation_strategy": "Iterative",
     "texture_type": [
       "RGB Tex."
     ],
@@ -1209,12 +1236,15 @@
     ],
     "venue": "SIGGRAPH",
     "year": 2025,
-    "model": "Diff. (2D)",
+    "model": "Diffusion (2D)",
     "guidance": [
       "Image"
     ],
     "model_type": "Fine-tuned",
-    "generation_strategy": "Feed-forward + Sync.",
+    "generation_strategy": [
+      "Feed-forward", 
+      "Synchronized"
+    ],
     "texture_type": [
       "RGB Tex."
     ],
@@ -1243,7 +1273,7 @@
     ],
     "venue": "SIGGRAPH Asia",
     "year": 2024,
-    "model": "Diff. (UV)",
+    "model": "Diffusion (UV)",
     "guidance": [
       "Text",
       "Image"
@@ -1274,7 +1304,7 @@
     ],
     "venue": "CVPR",
     "year": 2024,
-    "model": "Diff. (on surface)",
+    "model": "Diffusion (on surface)",
     "guidance": [
       "Unconditional"
     ],
@@ -1306,7 +1336,7 @@
     ],
     "venue": "SIGGRAPH",
     "year": 2024,
-    "model": "Diff. (2D)",
+    "model": "Diffusion (2D)",
     "guidance": [
       "Image",
       "Brush"
@@ -1345,7 +1375,7 @@
     ],
     "venue": "CVPR",
     "year": 2024,
-    "model": "Diff. (2D)",
+    "model": "Diffusion (2D)",
     "guidance": [
       "Image"
     ],
@@ -1353,7 +1383,7 @@
       "Fine-tuned", 
       "Custom"
     ],
-    "generation_strategy": "Optim.",
+    "generation_strategy": "Optimization",
     "texture_type": [
       "PBR Mat."
     ],
@@ -1381,12 +1411,12 @@
     ],
     "venue": "TOG",
     "year": 2024,
-    "model": "Diff. (2D)",
+    "model": "Diffusion (2D)",
     "guidance": [
       "Image"
     ],
     "model_type": "Pre-trained",
-    "generation_strategy": "Optim.",
+    "generation_strategy": "Optimization",
     "texture_type": [
       "RGB Tex."
     ],
@@ -1415,7 +1445,7 @@
     ],
     "venue": "ECCV",
     "year": 2024,
-    "model": "Diff. (2D)",
+    "model": "Diffusion (2D)",
     "guidance": [
       "Text"
     ],
@@ -1423,7 +1453,10 @@
       "Fine-tuned", 
       "Custom"
     ],
-    "generation_strategy": "Sync. + Optim.",
+    "generation_strategy": [
+      "Synchronized",
+      "Optimization"
+    ],
     "texture_type": [
       "RGB Tex."
     ],
@@ -1456,7 +1489,7 @@
     ],
     "venue": "SIGGRAPH",
     "year": 2024,
-    "model": "Diff. (2D)",
+    "model": "Diffusion (2D)",
     "guidance": [
       "Text"
     ],
@@ -1464,7 +1497,7 @@
       "Fine-tuned", 
       "Custom"
     ],
-    "generation_strategy": "Optim.",
+    "generation_strategy": "Optimization",
     "texture_type": [
       "PBR Mat."
     ],
@@ -1496,7 +1529,7 @@
     ],
     "venue": "SIGGRAPH",
     "year": 2024,
-    "model": "Diff. (2D)",
+    "model": "Diffusion (2D)",
     "guidance": [
       "Text"
     ],
@@ -1504,7 +1537,7 @@
       "Fine-tuned", 
       "Custom"
     ],
-    "generation_strategy": "Optim.",
+    "generation_strategy": "Optimization",
     "texture_type": [
       "PBR Mat."
     ],
@@ -1534,7 +1567,7 @@
     ],
     "venue": "NeurIPS",
     "year": 2023,
-    "model": "Diff. (2D)",
+    "model": "Diffusion (2D)",
     "guidance": [
       "Text",
       "Image"
@@ -1543,7 +1576,7 @@
       "Pre-trained", 
       "Custom"
     ],
-    "generation_strategy": "Optim.",
+    "generation_strategy": "Optimization",
     "texture_type": [
       "RGB Tex."
     ],
@@ -1569,7 +1602,7 @@
     ],
     "venue": "CVPR",
     "year": 2024,
-    "model": "Diff. (2D)",
+    "model": "Diffusion (2D)",
     "guidance": [
       "Text"
     ],
@@ -1577,7 +1610,7 @@
       "Pre-trained", 
       "Custom"
     ],
-    "generation_strategy": "Optim.",
+    "generation_strategy": "Optimization",
     "texture_type": [
       "RGB Tex."
     ],
@@ -1603,12 +1636,12 @@
     ],
     "venue": "SIGGRAPH",
     "year": 2024,
-    "model": "Diff. (2D)",
+    "model": "Diffusion (2D)",
     "guidance": [
       "Image"
     ],
     "model_type": "Pre-trained",
-    "generation_strategy": "Iter.",
+    "generation_strategy": "Iterative",
     "texture_type": [
       "RGB Tex."
     ],
@@ -1633,7 +1666,7 @@
     ],
     "venue": "CVPR",
     "year": 2024,
-    "model": "Diff. (2D)",
+    "model": "Diffusion (2D)",
     "guidance": [
       "Text"
     ],
@@ -1641,7 +1674,7 @@
       "Pre-trained", 
       "Custom"
     ],
-    "generation_strategy": "Optim.",
+    "generation_strategy": "Optimization",
     "texture_type": [
       "PBR Mat."
     ],
@@ -1667,7 +1700,7 @@
     ],
     "venue": "ICCV",
     "year": 2023,
-    "model": "Diff. (2D)",
+    "model": "Diffusion (2D)",
     "guidance": [
       "Text"
     ],
@@ -1675,7 +1708,7 @@
       "Pre-trained", 
       "Custom"
     ],
-    "generation_strategy": "Optim.",
+    "generation_strategy": "Optimization",
     "texture_type": [
       "PBR Mat."
     ],
@@ -1701,7 +1734,7 @@
     ],
     "venue": "CVPR",
     "year": 2025,
-    "model": "Diff. (2D/UV)",
+    "model": "Diffusion (2D/UV)",
     "guidance": [
       "Text",
       "3D Mesh"
@@ -1738,7 +1771,7 @@
     ],
     "venue": "ECCV",
     "year": 2024,
-    "model": "Diff. (2D/UV)",
+    "model": "Diffusion (2D/UV)",
     "guidance": [
       "Text",
       "Image"
@@ -1773,7 +1806,7 @@
     ],
     "venue": "CVPR",
     "year": 2024,
-    "model": "Diff. (2D/UV)",
+    "model": "Diffusion (2D/UV)",
     "guidance": [
       "Text"
     ],
@@ -1807,7 +1840,7 @@
     ],
     "venue": "SIGGRAPH Asia",
     "year": 2024,
-    "model": "Diff. (2D)",
+    "model": "Diffusion (2D)",
     "guidance": [
       "Image"
     ],
@@ -1846,7 +1879,7 @@
     ],
     "venue": "CVPR",
     "year": 2025,
-    "model": "Diff. (2D/UV)",
+    "model": "Diffusion (2D/UV)",
     "guidance": [
       "Text"
     ],
@@ -1880,7 +1913,7 @@
     ],
     "venue": "ICCV",
     "year": 2023,
-    "model": "Diff. (Point+UV)",
+    "model": "Diffusion (Point+UV)",
     "guidance": [
       "Unconditional",
       "Text",
@@ -1916,13 +1949,13 @@
     ],
     "venue": "SIGGRAPH Asia",
     "year": 2025,
-    "model": "Diff. (Video+UV)",
+    "model": "Diffusion (Video+UV)",
     "guidance": [
       "Text",
       "Image"
     ],
     "model_type": "Fine-tuned",
-    "generation_strategy": "Sync.",
+    "generation_strategy": "Synchronized",
     "texture_type": [
       "RGB Tex."
     ],
@@ -1953,12 +1986,12 @@
     ],
     "venue": "ICCV",
     "year": 2025,
-    "model": "Diff. (2D)",
+    "model": "Diffusion (2D)",
     "guidance": [
       "Image"
     ],
     "model_type": "Fine-tuned",
-    "generation_strategy": "Sync.",
+    "generation_strategy": "Synchronized",
     "texture_type": [
       "RGB Tex."
     ],
@@ -1991,12 +2024,12 @@
     ],
     "venue": "ICCV",
     "year": 2025,
-    "model": "Diff. (2D)",
+    "model": "Diffusion (2D)",
     "guidance": [
       "Image"
     ],
     "model_type": "Fine-tuned",
-    "generation_strategy": "Sync.",
+    "generation_strategy": "Synchronized",
     "texture_type": [
       "PBR Mat."
     ],
@@ -2027,13 +2060,13 @@
     ],
     "venue": "SIGGRAPH",
     "year": 2024,
-    "model": "Diff. (2D)",
+    "model": "Diffusion (2D)",
     "guidance": [
       "Text",
       "Image"
     ],
     "model_type": "Custom",
-    "generation_strategy": "Sync.",
+    "generation_strategy": "Synchronized",
     "texture_type": [
       "PBR Mat."
     ],
@@ -2060,13 +2093,13 @@
     ],
     "venue": "EGSR",
     "year": 2025,
-    "model": "Diff. (Video+PBR)",
+    "model": "Diffusion (Video+PBR)",
     "guidance": [
       "Text",
       "Image"
     ],
     "model_type": "Fine-tuned",
-    "generation_strategy": "Sync.",
+    "generation_strategy": "Synchronized",
     "texture_type": [
       "PBR Mat."
     ],
@@ -2093,7 +2126,7 @@
     ],
     "venue": "ICME",
     "year": 2025,
-    "model": "Diff. (2D+PBR)",
+    "model": "Diffusion (2D+PBR)",
     "guidance": [
       "Text",
       "Multimodal"

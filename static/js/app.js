@@ -223,8 +223,10 @@
         currentYear = y;
         html += `<li aria-hidden="true" style="margin-top:4px;"><h4 style="margin:12px 0 4px;">${y}</h4></li>`;
       }
+      const model = asList(p.model);
       const guidance = asList(p.guidance);
       const modelType = asList(p.model_type);
+      const generation = asList(p.generation_strategy);
       const texture  = asList(p.texture_type);
       html += `
         <li style="padding:12px; border:1px solid #eee; border-radius:12px; background:#fff;">
@@ -234,7 +236,7 @@
               <div style="font-size:13px; opacity:.85;">${(p.authors||[]).join(', ')}</div>
               <div style="font-size:12px; opacity:.7; margin-top:2px;">${p.venue||''} ${p.year||''}</div>
               <div style="margin-top:6px;">
-                ${[p.model, ...guidance, ...modelType, p.generation_strategy, ...texture].filter(Boolean).map(badge).join('')}
+                ${[...model, ...guidance, ...modelType, ...generation, ...texture].filter(Boolean).map(badge).join('')}
               </div>
             </div>
             <div style="display:flex; gap:10px; align-items:center;">
@@ -261,8 +263,10 @@
       return;
     }
     const rows = [...items].sort((a,b)=>(Number(b.year)||0)-(Number(a.year)||0)).map(p=>{
+      const m = asList(p.model).join(', ');
       const g = asList(p.guidance).join(', ');
       const mt = asList(p.model_type).join(', ');
+      const gs = asList(p.generation_strategy).join(', ');
       const t = asList(p.texture_type).join(', ');
       return `
         <tr>
@@ -270,10 +274,10 @@
           <td>${(p.authors||[]).join(', ')}</td>
           <td>${p.venue||''}</td>
           <td style="text-align:center;">${p.year||''}</td>
-          <td>${p.model||''}</td>
+          <td>${m}</td>
           <td>${g}</td>
           <td>${mt}</td>
-          <td>${p.generation_strategy||''}</td>
+          <td>${gs}</td>
           <td>${t}</td>
           <td>
             ${p?.links?.paper   ? `<a href="${p.links.paper}" target="_blank" rel="noopener">Paper</a>`   : ''}
@@ -342,8 +346,10 @@
 
     let currentYear = null;
     const rows = sorted.map(p=>{
+      const model = asList(p.model);
       const guidance = asList(p.guidance);
       const modelType = asList(p.model_type);
+      const generation = asList(p.generation_strategy);
       const texture  = asList(p.texture_type);
       const y = p.year ?? '';
       let yearHeading = '';
@@ -362,10 +368,10 @@
 
           <!-- Center: attributes (centered cells) -->
           <div class="hyb-attrs">
-            <div>${p.model ? pill(p.model) : '—'}</div>
+            <div>${model.length ? model.map(pill).join(' ') : '—'}</div>
             <div>${guidance.length ? guidance.map(pill).join(' ') : '—'}</div>
             <div>${modelType.length ? modelType.map(pill).join(' ') : '—'}</div>
-            <div>${p.generation_strategy ? pill(p.generation_strategy) : '—'}</div>
+            <div>${generation.length ? generation.map(pill).join(' ') : '—'}</div>
             <div>${texture.length ? texture.map(pill).join(' ') : '—'}</div>
           </div>
 

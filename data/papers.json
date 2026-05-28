@@ -1734,12 +1734,15 @@
     ],
     "venue": "CVPR",
     "year": 2025,
-    "model": "Diffusion (2D/UV)",
+    "model": "Diffusion (2D+UV)",
     "guidance": [
       "Text",
       "3D Mesh"
     ],
-    "model_type": "Feed-forward",
+    "model_type": [
+      "Fine-tuned",
+      "Custom"
+    ],
     "generation_strategy": "Feed-forward",
     "texture_type": [
       "PBR Mat."

@@ -503,11 +503,13 @@ h4, h5, h6 { font-weight: 500; }
 .hyb-row{
   padding: 14px;
   margin-top: 12px;
+  background: #f8fbff;
+  border-color: #e2edf9;
   transition: box-shadow .15s ease, transform .15s ease, border-color .15s ease;
 }
 .hyb-row:hover{
-  border-color: #cfd6e2;
-  box-shadow: 0 6px 16px rgba(20, 30, 60, 0.08);
+  border-color: #d2e2f4;
+  box-shadow: 0 6px 16px rgba(35, 92, 158, 0.07);
   transform: translateY(-1px);
 }
 
@@ -556,6 +558,31 @@ h4, h5, h6 { font-weight: 500; }
 .pill-detail{
   font-size: var(--pill-detail-scale);
   opacity: .85;
+}
+.pill-model{
+  background: #fff6f3;
+  border-color: #f0c3b9;
+  color: #8a4a3f;
+}
+.pill-guidance{
+  background: #faf6ff;
+  border-color: #ddcff3;
+  color: #604686;
+}
+.pill-model-type{
+  background: #f4fbf8;
+  border-color: #c8e2d8;
+  color: #2e6a57;
+}
+.pill-generation{
+  background: #fff8ef;
+  border-color: #efd6b6;
+  color: #7f5721;
+}
+.pill-texture{
+  background: #fff5f8;
+  border-color: #edcbd6;
+  color: #85445a;
 }
 
 /* Responsive: stack columns on narrow screens */

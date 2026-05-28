@@ -224,7 +224,7 @@
     });
     let html = `<ol class="paper-list" style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:10px;">`;
     let currentYear = null;
-    const badge = (t)=>`<span class="pill pill-list">${formatBubbleLabel(t)}</span>`;
+    const badge = (t, facet)=>`<span class="pill pill-list pill-${facet}">${formatBubbleLabel(t)}</span>`;
     sorted.forEach(p=>{
       const y = p.year ?? '';
       if (y && y !== currentYear){
@@ -244,7 +244,13 @@
               <div style="font-size:13px; opacity:.85;">${(p.authors||[]).join(', ')}</div>
               <div style="font-size:12px; opacity:.7; margin-top:2px;">${p.venue||''} ${p.year||''}</div>
               <div style="margin-top:6px;">
-                ${[...model, ...guidance, ...modelType, ...generation, ...texture].filter(Boolean).map(badge).join('')}
+                ${[
+                  ...model.map(v => badge(v, 'model')),
+                  ...guidance.map(v => badge(v, 'guidance')),
+                  ...modelType.map(v => badge(v, 'model-type')),
+                  ...generation.map(v => badge(v, 'generation')),
+                  ...texture.map(v => badge(v, 'texture'))
+                ].join('')}
               </div>
             </div>
             <div style="display:flex; gap:10px; align-items:center;">
@@ -350,7 +356,7 @@
       </div>`;
 
 
-    const pill = (t)=> `<span class="pill">${formatBubbleLabel(t)}</span>`;
+    const pill = (t, facet)=> `<span class="pill pill-${facet}">${formatBubbleLabel(t)}</span>`;
 
     let currentYear = null;
     const rows = sorted.map(p=>{
@@ -376,11 +382,11 @@
 
           <!-- Center: attributes (centered cells) -->
           <div class="hyb-attrs">
-            <div>${model.length ? model.map(pill).join('') : '—'}</div>
-            <div>${guidance.length ? guidance.map(pill).join('') : '—'}</div>
-            <div>${modelType.length ? modelType.map(pill).join('') : '—'}</div>
-            <div>${generation.length ? generation.map(pill).join('') : '—'}</div>
-            <div>${texture.length ? texture.map(pill).join('') : '—'}</div>
+            <div>${model.length ? model.map(v => pill(v, 'model')).join('') : '—'}</div>
+            <div>${guidance.length ? guidance.map(v => pill(v, 'guidance')).join('') : '—'}</div>
+            <div>${modelType.length ? modelType.map(v => pill(v, 'model-type')).join('') : '—'}</div>
+            <div>${generation.length ? generation.map(v => pill(v, 'generation')).join('') : '—'}</div>
+            <div>${texture.length ? texture.map(v => pill(v, 'texture')).join('') : '—'}</div>
           </div>
 
           <!-- Right: links (stacked, right-aligned) -->

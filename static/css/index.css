@@ -468,6 +468,7 @@ h4, h5, h6 { font-weight: 500; }
   --hyb-col-left:   2.6fr;   /* most space for the first column */
   --hyb-col-center: 1.5fr;
   --hyb-col-right:  0.3fr;
+  --pill-detail-scale: 0.8em;
 }
 
 /* Outer grid (header + rows) */
@@ -542,8 +543,19 @@ h4, h5, h6 { font-weight: 500; }
   border: 1px solid #d7e1f0;
   border-radius: 999px;
   font-size: 14px;
+  line-height: 1.15;
   white-space: nowrap;
   background: #f2f6ff;
+}
+.pill-list{
+  margin-right: 6px;
+  border-color: #ddd;
+  font-size: 12px;
+  background: #fff;
+}
+.pill-detail{
+  font-size: var(--pill-detail-scale);
+  opacity: .85;
 }
 
 /* Responsive: stack columns on narrow screens */
@@ -586,11 +598,12 @@ h4, h5, h6 { font-weight: 500; }
 /* the wrapper of pills inside each attribute cell */
 .hyb-row .hyb-attrs > div{
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   /* horizontal + vertical gaps */
   column-gap: 5px;
-  row-gap: 3px;           /* <-- adds space between wrapped lines */
+  row-gap: 5px;           /* <-- adds space between wrapped lines */
 }
 
 .hyb-year{

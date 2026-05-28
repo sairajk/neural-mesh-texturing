@@ -526,11 +526,14 @@ h4, h5, h6 { font-weight: 500; }
 
 /* Header bar */
 .hyb-header{
+  position: sticky;
+  top: 0;
+  z-index: 15;
   padding: 8px 12px;
   background: #f4f7fb;
   margin-bottom: 8px;
   font-weight: 600;
-  border-color: #d2d8e2;
+  border-color: #aeb9c8;
 }
 
 /* Center all header “titles” */
@@ -641,7 +644,7 @@ h4, h5, h6 { font-weight: 500; }
   #cards{
     width: 100%;
     max-width: 100%;
-    overflow-x: hidden;
+    overflow: visible;
   }
   .hyb-header,
   .hyb-row{

@@ -242,7 +242,7 @@
             <div style="min-width:260px;">
               <div style="font-weight:600;">${p.title}</div>
               <div style="font-size:13px; opacity:.85;">${(p.authors||[]).join(', ')}</div>
-              <div style="font-size:12px; opacity:.7; margin-top:2px;">${p.venue||''} ${p.year||''}</div>
+              <div class="paper-meta">${p.venue||''} ${p.year||''}</div>
               <div style="margin-top:6px;">
                 ${[
                   ...model.map(v => badge(v, 'model')),

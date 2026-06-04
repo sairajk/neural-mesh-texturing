@@ -12,9 +12,10 @@
     texture_type: [],  // ['RGB','PBR']
   };
   const FUSE_OPTIONS = {
-    includeScore: true, threshold: 0.3, ignoreLocation: true,
-    keys: [{name:'title',weight:.5},{name:'authors',weight:.3},{name:'venue',weight:.2},'year','tags',...FACETS]
+    includeScore: true, threshold: 0.2, ignoreLocation: true,
+    keys: [{name:'title',weight:.5},{name:'authors',weight:.35},{name:'venue',weight:.15},'year','tags']
   };
+  const TEXT_SEARCH_FIELDS = ['title','venue','year','tags'];
 
   // Pretty labels for chip keys (fallback to PascalCase)
   const LABELS = {
@@ -52,6 +53,27 @@
   const qsa = (s) => Array.from(document.querySelectorAll(s));
   const dedupe = (a) => Array.from(new Set(a.filter(Boolean)));
   const asList = (v) => Array.isArray(v) ? v.filter(Boolean) : (v ? [v] : []);
+  const flattenSearchValue = (v) => Array.isArray(v) ? v.flatMap(flattenSearchValue) : asList(v);
+  const normalizeSearchText = (v) => String(v ?? '')
+    .normalize('NFKD')
+    .toLowerCase()
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]+/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+  const paperTextSearchText = (p) => normalizeSearchText(
+    TEXT_SEARCH_FIELDS.flatMap(f => flattenSearchValue(p[f])).join(' ')
+  );
+  function matchesAuthorQuery(authors, query, terms) {
+    return asList(authors).some(author => {
+      const text = normalizeSearchText(author);
+      const tokens = text.split(' ').filter(Boolean);
+      if (!text) return false;
+      if (text === query || text.startsWith(query)) return true;
+      if (terms.length === 1) return tokens.some(token => token === query || token.startsWith(query));
+      return terms.every((term, i) => tokens[i] && tokens[i].startsWith(term));
+    });
+  }
   const escapeHTML = (v) => String(v).replace(/[&<>"]/g, (c) => ({
     38: "&amp;",
     60: "&lt;",
@@ -206,6 +228,20 @@
   }
   function runSearch(base){
     if (!state.q) return base;
+    const query = normalizeSearchText(state.q);
+    if (!query) return base;
+
+    const terms = query.split(' ').filter(Boolean);
+    const authorResults = base.filter(p => matchesAuthorQuery(p.authors, query, terms));
+    if (authorResults.length) return authorResults;
+
+    const textResults = base.filter(p => {
+      const text = paperTextSearchText(p);
+      return text.includes(query) || terms.every(term => text.includes(term));
+    });
+    if (textResults.length) return textResults;
+    if (!fuse) return base;
+
     const results = (fuse.search(state.q)||[]).map(r => r.item);
     const set = new Set(base);
     return results.filter(p => set.has(p));

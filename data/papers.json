@@ -2150,5 +2150,394 @@
     "links": {
       "paper": "https://arxiv.org/pdf/2404.14676.pdf"
     }
+  },
+  {
+      "id": "2026-calitex",
+      "title": "CaliTex: Geometry-Calibrated Attention for View-Coherent 3D Texture Generation",
+      "authors": [
+          "Chenyu Liu",
+          "Hongze Chen",
+          "Jingzhi Bao",
+          "Lingting Zhu",
+          "Runze Zhang",
+          "Weikai Chen",
+          "Zeyu Hu",
+          "Yingda Yin",
+          "Keyang Luo",
+          "Xin Wang"
+      ],
+      "venue": "CVPR",
+      "year": 2026,
+      "model": [
+          "Diffusion (2D)"
+      ],
+      "guidance": [
+          "Image"
+      ],
+      "model_type": [
+          "Fine-tuned"
+      ],
+      "generation_strategy": "Synchronized",
+      "texture_type": [
+          "RGB Tex."
+      ],
+      "tags": [
+          "view-coherent",
+          "geometry-calibrated attention",
+          "3d texture generation"
+      ],
+      "links": {
+          "paper": "https://openaccess.thecvf.com/content/CVPR2026/papers/Liu_CaliTex_Geometry-Calibrated_Attention_for_View-Coherent_3D_Texture_Generation_CVPR_2026_paper.pdf",
+          "project": "https://calitex-project.github.io/",
+          "code": "https://github.com/Ryu0523/CaliTex"
+      }
+  },
+  {
+      "id": "2026-natex",
+      "title": "NaTex: Seamless Texture Generation as Latent Color Diffusion",
+      "authors": [
+          "Zeqiang Lai",
+          "Yunfei Zhao",
+          "Zibo Zhao",
+          "Xin Yang",
+          "Xin Huang",
+          "Jingwei Huang",
+          "Xiangyu Yue",
+          "Chunchao Guo"
+      ],
+      "venue": "CVPR",
+      "year": 2026,
+      "model": [
+          "Diffusion (3D)"
+      ],
+      "guidance": [
+          "Image"
+      ],
+      "model_type": [
+          "Custom"
+      ],
+      "generation_strategy": "Feed-forward",
+      "texture_type": [
+          "RGB Tex.",
+          "PBR Mat."
+      ],
+      "tags": [
+          "native texture generation",
+          "latent color diffusion",
+          "3d color field"
+      ],
+      "links": {
+          "paper": "https://openaccess.thecvf.com/content/CVPR2026/papers/Lai_NaTex_Seamless_Texture_Generation_as_Latent_Color_Diffusion_CVPR_2026_paper.pdf",
+          "project": "https://natex-ldm.github.io/",
+          "code": "https://github.com/Zeqiang-Lai/NaTex"
+      }
+  },
+  {
+      "id": "2026-textrix",
+      "title": "TEXTRIX: Latent Attribute Grid for Native Texture Generation and Beyond",
+      "authors": [
+          "Yifei Zeng",
+          "Yajie Bao",
+          "Jiachen Qian",
+          "Shuang Wu",
+          "Youtian Lin",
+          "Hao Zhu",
+          "Buyu Li",
+          "Feihu Zhang",
+          "Xun Cao",
+          "Yao Yao"
+      ],
+      "venue": "CVPR",
+      "year": 2026,
+      "model": [
+          "Diffusion (3D)"
+      ],
+      "guidance": [
+          "Image"
+      ],
+      "model_type": [
+          "Custom"
+      ],
+      "generation_strategy": "Feed-forward",
+      "texture_type": [
+          "RGB Tex.",
+          "PBR Mat."
+      ],
+      "tags": [
+          "native 3d texturing",
+          "sparse attribute grid",
+          "pbr materials"
+      ],
+      "links": {
+          "paper": "https://openaccess.thecvf.com/content/CVPR2026/papers/Zeng_TEXTRIX_Latent_Attribute_Grid_for_Native_Texture_Generation_and_Beyond_CVPR_2026_paper.pdf",
+          "project": "https://www.neural4d.com/research-page/textrix",
+          "code": "https://github.com/DreamTechAI/TEXTRIX"
+      }
+  },
+  {
+      "id": "2026-pixelsync",
+      "title": "PixelSync: Enhancing Texture Generation via Explicit Feature Synchronization",
+      "authors": [
+          "Philipp Drescher",
+          "Edoardo A. Dominici",
+          "Giacomo Nazzaro",
+          "Konstantinos Vardis",
+          "Stefan Hauswiesner",
+          "Markus Steinberger"
+      ],
+      "venue": "ACM CGIT",
+      "year": 2026,
+      "model": [
+          "Diffusion (2D)"
+      ],
+      "guidance": [
+          "Text",
+          "Image"
+      ],
+      "model_type": [
+          "Pre-trained"
+      ],
+      "generation_strategy": "Synchronized",
+      "texture_type": [
+          "RGB Tex."
+      ],
+      "tags": [
+          "feature synchronization",
+          "multi-view consistency",
+          "training-free"
+      ],
+      "links": {
+          "paper": "https://dl.acm.org/doi/10.1145/3804489"
+      }
+  },
+  {
+      "id": "2026-lumitex",
+      "title": "LumiTex: Towards High-Fidelity PBR Texture Generation with Illumination Context",
+      "authors": [
+          "Jingzhi Bao",
+          "Hongze Chen",
+          "Lingting Zhu",
+          "Chenyu Liu",
+          "Runze Zhang",
+          "Keyang Luo",
+          "Zeyu Hu",
+          "Weikai Chen",
+          "Yingda Yin",
+          "Xin Wang",
+          "Zehong Lin",
+          "Jun Zhang",
+          "Xiaoguang Han"
+      ],
+      "venue": "ICLR",
+      "year": 2026,
+      "model": [
+          "Diffusion (2D)"
+      ],
+      "guidance": [
+          "Image"
+      ],
+      "model_type": [
+          "Fine-tuned",
+          "Custom"
+      ],
+      "generation_strategy": "Synchronized",
+      "texture_type": [
+          "PBR Mat."
+      ],
+      "tags": [
+          "pbr",
+          "illumination context",
+          "material generation"
+      ],
+      "links": {
+          "paper": "https://arxiv.org/pdf/2511.19437",
+          "project": "https://lumitex.vercel.app/",
+          "code": "https://github.com/LumiTexPBR/LumiTex"
+      }
+  },
+  {
+      "id": "2026-differentiable-rewards-texture",
+      "title": "End-to-End Fine-Tuning of 3D Texture Generation using Differentiable Rewards",
+      "authors": [
+          "AmirHossein Zamani",
+          "Tianhao Xie",
+          "Amir G. Aghdam",
+          "Tiberiu Popa",
+          "Eugene Belilovsky"
+      ],
+      "venue": "WACV",
+      "year": 2026,
+      "model": [
+          "Diffusion (2D)"
+      ],
+      "guidance": [
+          "Text"
+      ],
+      "model_type": [
+          "Fine-tuned"
+      ],
+      "generation_strategy": "Iterative",
+      "texture_type": [
+          "RGB Tex."
+      ],
+      "tags": [
+          "differentiable rewards",
+          "preference optimization",
+          "text-to-texture"
+      ],
+      "links": {
+          "paper": "https://openaccess.thecvf.com/content/WACV2026/papers/Zamani_End-to-End_Fine-Tuning_of_3D_Texture_Generation_using_Differentiable_Rewards_WACV_2026_paper.pdf",
+          "project": "https://ahhhz975.github.io/DifferentiableTextureLearning/",
+          "code": "https://github.com/AHHHZ975/Differentiable-Texture-Learning"
+      }
+  },
+  {
+      "id": "2026-mv2uv",
+      "title": "MV2UV: Generating High-quality UV Texture Maps with Multiview Prompts",
+      "authors": [
+          "Zheng Zhang",
+          "Qinchuan Zhang",
+          "Yuteng Ye",
+          "Zhi Chen",
+          "Penglei Ji",
+          "Mengfei Li",
+          "Wenxiao Zhang",
+          "Yuan Liu"
+      ],
+      "venue": "CVPR",
+      "year": 2026,
+      "model": [
+          "Diffusion (2D+UV)"
+      ],
+      "guidance": [
+          "Image"
+      ],
+      "model_type": [
+          "Fine-tuned",
+          "Custom"
+      ],
+      "generation_strategy": "Feed-forward",
+      "texture_type": [
+          "RGB Tex."
+      ],
+      "tags": [
+          "uv texture maps",
+          "multiview prompts",
+          "uv inpainting"
+      ],
+      "links": {
+          "paper": "https://openaccess.thecvf.com/content/CVPR2026/papers/Zhang_MV2UV_Generating_High-quality_UV_Texture_Maps_with_Multiview_Prompts_CVPR_2026_paper.pdf"
+      }
+  },
+  {
+      "id": "2026-ni-tex",
+      "title": "NI-Tex: Non-isometric Image-based Garment Texture Generation",
+      "authors": [
+          "Hui Shan",
+          "Ming Li",
+          "Haitao Yang",
+          "Kai Zheng",
+          "Sizhe Zheng",
+          "Yanwei Fu",
+          "Xiangru Huang"
+      ],
+      "venue": "CVPR",
+      "year": 2026,
+      "model": [
+          "Diffusion (2D)"
+      ],
+      "guidance": [
+          "Image"
+      ],
+      "model_type": [
+          "Fine-tuned"
+      ],
+      "generation_strategy": [
+          "Feed-forward",
+          "Iterative"
+      ],
+      "texture_type": [
+          "PBR Mat."
+      ],
+      "tags": [
+          "garment texture",
+          "non-isometric",
+          "pbr materials"
+      ],
+      "links": {
+          "paper": "https://openaccess.thecvf.com/content/CVPR2026/papers/Shan_NI-Tex_Non-isometric_Image-based_Garment_Texture_Generation_CVPR_2026_paper.pdf",
+          "code": "https://github.com/SII-Hui/NI-Tex"
+      }
+  },
+  {
+      "id": "2026-omgtex",
+      "title": "OMGTex: One-stage Multi-style Facial Texture Reconstruction without Geometry Guidance",
+      "authors": [
+          "Zitong Xiao",
+          "Yuda Qiu",
+          "Zisheng Ye",
+          "Xiaoguang Han"
+      ],
+      "venue": "CVPR",
+      "year": 2026,
+      "model": [
+          "Diffusion (UV)"
+      ],
+      "guidance": [
+          "Image"
+      ],
+      "model_type": [
+          "Fine-tuned"
+      ],
+      "generation_strategy": [
+          "Feed-forward"
+      ],
+      "texture_type": [
+          "RGB Tex."
+      ],
+      "tags": [
+          "facial texture",
+          "geometry-free",
+          "uv reconstruction"
+      ],
+      "links": {
+          "paper": "https://arxiv.org/pdf/2605.25778",
+          "code": "https://github.com/XZT24/OMGTex"
+      }
+  },
+  {
+      "id": "2026-matlat",
+      "title": "MatLat: Material Latent Space for PBR Texture Generation",
+      "authors": [
+          "Kyeongmin Yeo",
+          "Yunhong Min",
+          "Jaihoon Kim",
+          "Minhyuk Sung"
+      ],
+      "venue": "CVPR",
+      "year": 2026,
+      "model": [
+          "Diffusion (2D)"
+      ],
+      "guidance": [
+          "Text"
+      ],
+      "model_type": [
+          "Fine-tuned"
+      ],
+      "generation_strategy": "Synchronized",
+      "texture_type": [
+          "PBR Mat."
+      ],
+      "tags": [
+          "pbr",
+          "material latent space",
+          "multi-view diffusion"
+      ],
+      "links": {
+          "paper": "https://openaccess.thecvf.com/content/CVPR2026/papers/Yeo_MatLat_Material_Latent_Space_for_PBR_Texture_Generation_CVPR_2026_paper.pdf",
+          "project": "https://matlat-proj.github.io/",
+          "code": "https://github.com/KAIST-Visual-AI-Group/MatLat"
+      }
   }
 ]

@@ -1,0 +1,200 @@
+name: Submit a missing paper
+description: Suggest a paper to add to the Neural 3D Mesh Texturing survey list.
+title: "[Paper]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping us improve the survey list. Please provide as much verified information as you can. Maintainers will review the submission before updating the website.
+
+  - type: input
+    id: title
+    attributes:
+      label: Paper title
+      description: Use the official paper title.
+      placeholder: Advances in Neural 3D Mesh Texturing
+    validations:
+      required: true
+
+  - type: textarea
+    id: authors
+    attributes:
+      label: Authors
+      description: List authors in paper order. One author per line is preferred.
+      placeholder: |
+        First Author
+        Second Author
+        Third Author
+    validations:
+      required: true
+
+  - type: input
+    id: venue
+    attributes:
+      label: Venue
+      description: Conference, journal, workshop, or preprint venue.
+      placeholder: SIGGRAPH Asia
+    validations:
+      required: true
+
+  - type: input
+    id: year
+    attributes:
+      label: Year
+      placeholder: "2026"
+    validations:
+      required: true
+
+  - type: input
+    id: paper_url
+    attributes:
+      label: Paper URL
+      description: Prefer an official publisher, arXiv, OpenReview, or project-hosted PDF link.
+      placeholder: https://arxiv.org/abs/...
+    validations:
+      required: true
+
+  - type: input
+    id: project_url
+    attributes:
+      label: Project page URL
+      description: Optional.
+      placeholder: https://...
+
+  - type: input
+    id: code_url
+    attributes:
+      label: Code URL
+      description: Optional.
+      placeholder: https://github.com/...
+
+  - type: dropdown
+    id: model
+    attributes:
+      label: Model Type
+      description: Select the neural model/backbone used. Choose all that apply.
+      multiple: true
+      options:
+        - CLIP
+        - Diffusion
+        - Diffusion (2D)
+        - Diffusion (2D+PBR)
+        - Diffusion (2D+UV)
+        - Diffusion (2D/UV)
+        - Diffusion (3D)
+        - Diffusion (Point+UV)
+        - Diffusion (UV)
+        - Diffusion (Video+PBR)
+        - Diffusion (Video+UV)
+        - Diffusion (on surface)
+        - GAN
+        - Neural Fields
+        - VAE
+        - VGG
+        - Other / unsure
+    validations:
+      required: true
+
+  - type: dropdown
+    id: guidance
+    attributes:
+      label: Guidance
+      description: Select the input condition(s) controlling the texture appearance.
+      multiple: true
+      options:
+        - 3D Mesh
+        - 3D Shape
+        - Brush
+        - Image
+        - Multimodal
+        - Text
+        - Unconditional
+        - Other / unsure
+    validations:
+      required: true
+
+  - type: dropdown
+    id: model_type
+    attributes:
+      label: Training Strategy
+      description: Select how the model is trained or adapted for texturing.
+      multiple: true
+      options:
+        - Pre-trained
+        - Fine-tuned
+        - Custom
+        - Other / unsure
+    validations:
+      required: true
+
+  - type: dropdown
+    id: generation_strategy
+    attributes:
+      label: Generation Strategy
+      description: Select how textures are generated. Choose all that apply.
+      multiple: true
+      options:
+        - Optimization
+        - Iterative
+        - Iterative (+UV refine)
+        - Synchronized
+        - Synchronized (+refine)
+        - Feed-forward
+        - Feed-forward (interactive)
+        - Feed-forward (UV/tile)
+        - Other / unsure
+    validations:
+      required: true
+
+  - type: dropdown
+    id: texture_type
+    attributes:
+      label: Texture Type
+      description: Select the output texture/material type(s).
+      multiple: true
+      options:
+        - RGB Tex.
+        - PBR Mat.
+        - Other / unsure
+    validations:
+      required: true
+
+  - type: textarea
+    id: tags
+    attributes:
+      label: Additional tags or keywords
+      description: Optional. These are short free-form tags used internally for search.
+      placeholder: |
+        text-guided
+        uv texture
+        pbr materials
+
+  - type: textarea
+    id: bibtex
+    attributes:
+      label: BibTeX
+      description: Optional but very helpful for verification.
+      render: bibtex
+      placeholder: |
+        @article{...,
+          title = {...},
+          author = {...},
+          year = {...}
+        }
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes for maintainers
+      description: Optional. Add any taxonomy uncertainty, missing links, or context we should know.
+      placeholder: I am unsure whether this should be tagged as Iterative or Synchronized.
+
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Checklist
+      options:
+        - label: I checked that this paper is not already listed on the website.
+          required: true
+        - label: I understand that maintainers may adjust taxonomy labels for consistency.
+          required: true
